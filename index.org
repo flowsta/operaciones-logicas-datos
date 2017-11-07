@@ -1,0 +1,1189 @@
+#+LANGUAGE: es
+#+CATEGORY: manual, presentación, congreso, ponencia
+#+TAGS: commandline, línea de comandos, ls, pwd, mkdir, cd, touch, cp, mv, stdin, stdout, stderr, posix, diff, grep, egrep, find, awk, sed
+#+DESCRIPTION: Acometer un proyecto en Medialab-Prado
+#+TITLE: Operaciones lógicas con datos
+#+DATE: <2017-05-06 sáb 10:00>
+#+AUTHOR: Adolfo A. Bravo
+#+EMAIL: adolfo@medialab-prado.es
+#+OPTIONS: todo:nil pri:nil tags:nil ^:nil 
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:nil
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
+#+REVEAL_POSTAMBLE: <p> Creado por adolflow. </p>
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+
+* Introducción
+
+** Qué es lo que tenemos
+- Solemos disponer de un ordenador. Necesitamos controlar el
+  ordenador.
+- Independientemente del sistema operativo, hemos de tener permisos de
+  superusuarix/administradorx.
+- Un entorno gráfico con aplicaciones gráficas de escritorio.
+- Cómo instalar y desinstalar programas.
+- Optimizar el rendimiento.
+- Controlar el uso del disco.
+- Sea cual sea el problema/reto, saber afrontarlo.
+- Estructura del árbol de directorios. Rutas y enlaces simbólicos
+- Manejo de versiones de programas y/o de archivos.
+
+** Fundamental
+Para ello, entre otras cosas, podríamos conocer:
+- Conocimiento de la arquitectura hardware del ordenador.
+- Conocimiento de la estructura del sistema operativo.
+- Uso de la terminal, consola Unix.
+- Manejar la estructura de ficheros.
+- Distinguir entre rutas absolutas y relativas.
+- Nociones de las distintas codificaciones de caracteres.
+- Qué tipos de datos hay
+- Qué tipos de formatos de datos hay.
+- Usuarios y grupos
+
+** Opcional
+
+Aunque es opcional, nos va a dar mucha ventaja en el día a día:
+
+- Atajos de teclado.
+- Conocer la Web: navegador,  HTML, programas, utilidades,
+  atajos, buscadores.
+- Git
+- Nociones de tratamiento de datos: investigación, recolección,
+  curación, limpieza, visualización, análisis, etc.
+
+* Periodismo de datos
+** Antecedentes del periodismo de datos
+  :PROPERTIES:
+  :ID:       deef9d7c-0eee-4d53-83b7-46ca2629ed42
+  :END:
+
+- Philip Meyer
+- Adrian Holovaty
+- Aron Pilhofer
+- Simon Rogers
+
+#+BEGIN_NOTES
+- Philip Meyer: revueltas de Detroit
+- Adrian Holovaty, creador de Django, escrito en Python. Vino a la
+  primera edición de Visualizar
+- Aron Pilhofer, vino al taller de periodismo de datos
+  de 2013. Creador de Hacks&Hackers y DocumentCloud.
+- Hacks & Hackers, explicación de la máquina de escribir.
+- Simon Rogers, importantísimo papel al mezclar claramente datos
+  abiertos con periodismo de datos, periodismo de datos abiertos
+#+END_NOTES
+
+** Cronología Periodismo Datos
+
+#+BEGIN_EXPORT html
+<iframe src="http://interactivetimeline.com/1413/datajournalism/?w=480" width="480" height="301" frameborder="0" scrolling="no"></iframe>
+#+END_EXPORT
+Fuente: http://interactivetimeline.com/1413/datajournalism/
+Otro vídeo: https://www.youtube.com/watch?v=ItPTs48qcek
+
+*** De 1970 a 2012
+- Creada por el periodista de investigación Henk van Ess.
+- Muestra cómo ha evolucionado el término de /periodismo de precisión/ a /periodismo asistido por ordenador/ a
+  /periodismo de datos.
+
+
+** Sociedad de la Información
+  :PROPERTIES:
+  :ID:       1842f1ca-2d51-4408-bcff-f4e0521812fe
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+Vivimos en la sociedad de la información desde los años 1960
+- Sociedad industrial -->
+- Sociedad de la información -->
+- Sociedad del consumo -->
+- Sociedad del entretenimiento -->
+- Sociedad del conocimiento...
+
+** Precedentes de la sociedad de la información
+   :PROPERTIES:
+   :ID:       ecb41162-761f-4c88-bf5b-3712601d9347
+   :END:
+- Telares de Jacquard
+- Máquina de vapor de Watts
+- Programación de Ada Lovelace
+- Cambio acelerado durante y tras la II Guerra Mundial a nivel
+  hardware y software.
+- Teoría matemática de la información de Shannon y Weaver,
+  apoyada en Markov, Tukey, Von Neumann, Turing, Wiener...
+- Vinieron la cibernética, Internet, Web
+
+** Philip Meyer
+  :PROPERTIES:
+  :reveal_background: https://upload.wikimedia.org/wikipedia/commons/5/50/Philip_meyer.jpg
+  :ID:       678b9009-4d37-4bbe-bfec-d5cd081bc969
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+*** Resumen
+- El periodismo de precisión lo desarrolló el periodista Philip Meyer
+  en los años 1960’.
+- Se define por el uso de las matemáticas y otros métodos de las
+  ciencias sociales para interpretar los datos.
+- Famoso fue su estudio de las causas de las revueltas de Detroit
+  en 1967.
+- 40 muertos, 467 heridos, 7.200 arrestos y 2.000 casas destruidas: la
+  revuelta con más víctimas mortales en la historia de los EE.UU.
+- Meyer obtuvo el Pulitzer y de su experiencia publicó en 1973 el
+  libro /Precision Journalism: A Reporter’s Introduction to Social
+  Science Method/
+- Traducido al español como /Periodismo de precisión. Nuevas fronteras para la investigación periodística/. 
+
+*** The Miami Herald
+   :PROPERTIES:
+   :ID:       52e49b60-74c4-4b8e-985d-d02b0ba73e54
+   :END:
+#+attr_html: :width 300
+https://upload.wikimedia.org/wikipedia/commons/5/50/Philip_meyer.jpg
+
+En The Miami Herald (1958-62): precedente del *periodismo de datos*:
+
+1. Queja ciudadana por el alto coste de los seguros escolares contra incendios y huracanes.
+2. Ese coste lo establecía un /consejo de funcionarios públicos/.
+4. Cruza los nombres del /consejo/ con nombres de responsables de empresas...
+6. Eureka: el *65%* de la financiación de las campañas electorales procedían
+   de empresarios de seguros.
+
+*** Ciencias sociales
+    :PROPERTIES:
+    :reveal_background: http://computer-history.info/Page4.dir/pages/IBM.7090.dir/images/ibm.7090.jpg
+    :ID:       208b4b23-7548-4ccb-8830-7b161673bfe5
+    :END:
+
+*** Aplicaciones informáticas
+    :PROPERTIES:
+    :ID:       8cdec1d8-f457-43f3-8046-18f62947424a
+    :END:
+#+attr_html: :width 300
+http://computer-history.info/Page4.dir/pages/IBM.7090.dir/images/ibm.7090.jpg
+
+ - En Harvard Computation Center (1966) utiliza un IBM 7090.
+ - Busca predecir los resultados electorales de Ohio sin éxito.
+ - Durante su beca en Nieman estudia métodos de investigación de las ciencias sociales para aplicarlos al periodismo.
+ - Cada estudiante disponía de 120 segundos para utilizar el ordenador.
+ - Lo emplea con datos tabulados sobre /Harvard Data-Text/, el predecesor de /SPSS/ (/Statistical Package for the Social Sciences/).
+ - Intercambia minutos de uso del IBM por artículos para Nieman.
+*** Detroit Riots
+    :PROPERTIES:
+    :reveal_background: http://www.home.isr.umich.edu/wp-content/uploads/2011/04/freepress_article.png
+    :ID:       fa49f922-840e-49df-8475-0bdd880e0270
+    :END:
+1967, largo y cálido verano
+
+*** Investigación: Detroit Riot 1967
+   :PROPERTIES:
+   :ID:       880145d5-6f02-4a11-84ba-e0c6d6955fe9
+   :END:
+#+attr_html: :width 200
+http://www.home.isr.umich.edu/wp-content/uploads/2011/04/freepress_article.png
+- En la mañana del 23 de julio de 1967 la policía de Detroit hace una
+  redada en un after-hours donde más de 80 afroamericanxs celebraban
+  la vuelta de dos veteranxs de Vietnam.
+- La reacción es el comienzo de una revuelta que tras una semana de
+  incidentes se cobra 43 personas fallecidas.
+- Otras 467 heridas, 7200 arrestos y más de 2000 edificios destruidos.
+- Se propone realizar, además de las *historias periodísticas clásicas*, una *encuesta* que busque las ausas de la revuelta.
+- La Universidad de California había realizado un informe sobre las revueltas en Watts 1965. Les llevó dos años.
+
+*** Encuesta
+   :PROPERTIES:
+   :ID:       bc6f7596-181e-40b2-879c-a2d218f1e2de
+   :END:
+#+attr_html: :width 300
+file:/home/flow/ownCloud/proyectos/curso-verano-ucm-2017/img/police-brutality.png
+
+- Meyer se propone seguir el mismo método que la /UCLA/
+- Reducir el tiempo a hacerlo en tan [[https://s3.amazonaws.com/s3.documentcloud.org/documents/2070181/detroit1967.pdf][solo tres semanas]].
+- Equipo:
+ - Apoyo de Universidad del Estado de Wayne (Detroit) y sociólogx y expertxs
+   de encuestas de la Universidad de Michigan.
+ - Dos psicólogxs: Nathan Caplan y John Robinson (psicóloga e
+   investigador del /Institute for Social Research/ /ISR/)
+ - Judith Goldberg como programadora informática para la tabulación cruzada.
+ - 50 entrevistadorxs afroamericanxs, la mayoría profesorxs, para 437 residentes afroamericanxs.
+ - Programa /Filter Tau/ sobre un /IBM 360/40/
+
+*** IBM 360/40
+    :PROPERTIES:
+    :reveal_background: https://upload.wikimedia.org/wikipedia/commons/8/8d/Bundesarchiv_B_145_Bild-F038812-0014,_Wolfsburg,_VW_Autowerk.jpg
+    :ID:       8d599e35-42e4-4532-b468-c49784978fde
+    :END:
+
+*** Conclusiones
+- No hubo correlación entre status económico y participación.
+- Tampoco entre nivel educativo.
+- Ni siquiera hubo más participantes entre lxs recientes habitantes
+  llegados de los estados del sur.
+- Al contrario, la participación de lxs locales fue tres veces
+  superior.
+- Las causas principales señaladas fueron brutalidad policial,
+  sobrepoblación, malas condiciones de habitabilidad y falta de
+  trabajo.
+- Las personas que se manifestaron no representaban a toda la
+  población.
+
+*** Periodismo de precisión
+   :PROPERTIES:
+   :ID:       39061267-a2f6-4932-8da7-938bf8baf1b2
+   :END:
+ #+attr_html: :width 300
+ https://upload.wikimedia.org/wikipedia/commons/8/8d/Bundesarchiv_B_145_Bild-F038812-0014,_Wolfsburg,_VW_Autowerk.jpg
+- Un mes después del inicio de la revuelta, el domingo 20 de agosto,
+  se publicó el informe.
+- El uso de métodos de análisis de las ciencias sociales unido a software estadístico y ordenadores para construir una historia periodística lo definen como *periodismo de precisión* (1969).
+- Desmontan la teoría /Riff-Raff/ (revuelta para el avance) y la
+  /Assimilation/ (migraciones)
+- La teoría que triunfa es la de las aspiraciones cortadas: ver cómo los demás progresan mientras tú te estancas causa frustración.
+- Su trabajo se traduce en un libro fundamental: /Precision
+  Journalism: A Reporter's Introduction to Social Science Methods/
+  (1973)
+*** Caplan y el ISR
+- Caplan había visto la revuelta en directo, en concreto se acercó a las calle 12 el segundo día de las revueltas.
+- Trabajaba en Ann Arbor en el ISR de la Universidad de Michigan.
+- Volvió convencida de que había que estudiarlo para abordarlo
+  correctamente, y se preguntaba por alguna forma de conseguir
+  información en tiempo real de la realidad socio-económica de la
+  zona.
+- Lanzó una propuesta al National Institute of Mental Health (/NIMH/)
+  pero se encontró con Meyer.
+- Allí reclutó a John Robinson, investigador del ISR.
+
+*** Y más allá
+- Después de su publicación, Caplan y Jeffrey Page consiguieron fondos para utilizar el
+  mismo método de análisis para otras ciudades: Newark y New Jersey.
+- El NIMH obtuvo fondos de la National Advisory Commission on Civil
+  Disorders, creada una semana después del comienzo de las revueltas
+  de Detroit por el presidente Lyndon B. Johnson.
+- Su trabajo se convirtió en parte del informe de la comisión en 1968:
+  se hacían ampliaas recomendaciones para corregir las desigualdades
+  entre las etnias y abría oportunidades para la participación de lxs
+  afroamericanxs.
+
+*** Computer Assisted Reporting...
+    :PROPERTIES:
+    :ID:       51097fbe-0556-4b08-8eb3-1d549412ef32
+    :END:
+  - La sociedad de la información produce abundancia de información.
+  - Lo que a su vez origina un problema de atención.
+  - Se sacrifica todo en pro de la atención, incluso la verdad.
+  - Nota: cuando decía atención, entendamos ahora /analytics/
+  - CAR ha promovido un alto estándar de noticias que cuentan la verdad
+  - Aplicaciones informáticas: manejar grandes cantidades de información con herramientas analíticas más potentes.
+  - El ordenador ayuda pero el ordenador no es el objetivo ni define lo que es el periodismo.
+  - Situamos al periodismo a nivel de la ciencia y del arte.
+
+*** ...is dead
+    :PROPERTIES:
+    :ID:       68530554-d323-4da3-8fac-1aac628906a3
+    :END:
+
+ - La vía artística facilita la función del periodismo como entretenimiento.
+ - Cuando la atención es más importante que la historia, el mercado recompensa a aquellos que tienen habilidades en la creación de apariencias.
+ - Para favorecer la verdad en el periodismo, podemos practicar periodismo de precisión.
+ - Superar las ilusiones, la superstición, la percepción selectiva y las otras debilidades humanas que dificultan la adquisición de conocimientos.
+
+** Clarence Jones
+- Philip Meyer se refiere en su Precission Journalism a Clarence Jones
+  como uno de los primeros ejemplos del CAR.
+- Relaciona el Computer Assisted Reporting y el uso de las Bases de
+  datos, lo define como /pionner database maker/.
+- Lidera una investigación en 1968 en el Miami Herald sobre el sistema
+  judicial del Condado de Dade.
+*** Dade County
+- Analizó 3000 registros judiciales del Condado de Dade (Florida)
+- Contrató estudiantes derecho de la Universidad de Miami para
+  codificar/registrar la información.
+- Utilizó cuatro tarjetas perforadas de IBM para almacenar los datos
+  de cada caso.
+- Su técnica analítica fue la tabulación cruzada o /cross-tabulation/.
+- La Universidad de Michigan tenía una utilidad para el IBM 360
+  llamada Filter Tau.
+- También Harvard tenía la segunda versión de /Data-Text/.
+*** COBOL
+- Con la ayuda de Clark Lambert, jefe de sistemas del diario, utilizó
+  COBOL para analizar las tarjetas perforadas.
+- Fue el precursor del /periodismo de servicio público/.
+** Elliot Jaspin
+- A mediados de los 80, Elliot Jospin del Providence Journal adopta
+  esta metodología en una investigación sobre una presunta corrupción
+  en el gobierno local.
+- Analizo datos de 35.000 hipotecas destinadas supuestamente a rentas
+  medias y bajas de Rhode Island.
+- Toda la información almacenada en una cinta magnética reveló que los
+  hijos de los altos funcionarios del estado tenían los intereses más
+  bajos y los préstamos más grandes.
+- Destapó el desvío de gran parte de estos fondos públicos a una
+  cuenta corriente oculta.
+** Bill Dedman
+- Mayo de 1988, [[https://en.wikipedia.org/wiki/Bill_Dedman][Bill Dedman]] del /Atlanta Journal-Constitution/
+- Descubre que los bancos y cajas de Atlanta discriminan a
+  afroamericanxs.
+- Concedían más de cinco veces crédito a lxs blancxs.
+- El reportaje se llamó [[http://powerreporting.com/color/][El color del dinero]] ("The color of money").
+- Obtienen el Pulitzer de periodismo de investigación en 1988.
+** Aplicaciones informáticas
+- Intertype Company presenta en 1964 el ordenador para tareas
+  tipográficas.
+- 66 redacciones ya contaban con medios informáticos para alguna de
+  sus tareas, fundamentalmente inventarios o edición en cadena.
+** FOIA
+- Esta es la época también de tramitación de la /Freedom of
+  Information Act/ (/FOIA/).
+- Permitía que cualquier ciudadanx podía solicitar cualquier archivo o
+  resgistro del gobierno federal o del ejecutivo.
+** Resumen
+   :PROPERTIES:
+   :ID:       0671b78d-45ba-4af0-8ca8-7b2620dfb917
+   :END:
+- Periodismo
+- Investigación
+- Datos
+- Aplicaciones informáticas
+- Visualización
+** Antecedentes
+
+*** The Manchester Guardian
+  :PROPERTIES:
+  :reveal_background: file://docs/art-1821-the-manchester-guardian.png
+  :ID:       0cb1dcd6-145e-4982-9562-18804e59cba2
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+*** El estado de la educación en Manchester
+#+attr_html: :width 300 :alt el estado de la educación en Manchester
+file:///home/flow/ownCloud/proyectos/upv-periodismo-datos/docs/schools.png
+
+- Primer artículo de [[https://www.theguardian.com/news/datablog/2011/sep/26/data-journalism-guardian%0A][periodismo de datos]]
+- The Manchester Guardian (actual The Guardian), 5 de mayo de 1821
+
+
+* Visualización de datos
+  :PROPERTIES:
+  :ID:       96bbc094-adb5-4f0d-ae71-e0434eacf303
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+** John Priestley 1733-1804
+   :PROPERTIES:
+   :reveal_background: http://blogs.elpais.com/.a/6a00d8341bfb1653ef015433ee9227970c-pi
+   :END:
+
+*** A chart of biography and a achart of history
+#+attr_html: :width 300
+http://blogs.elpais.com/.a/6a00d8341bfb1653ef01543404f5f3970c-550wi
+- El inventor del aire, por ser uno de los descubridores del oxígeno.
+- A new chart of History (1769)
+- A chart of biography (1765): representa a través de líneas de
+  longitud variable las vidas de 2000 personasjes famosos clasificados
+  en:
+ - Historiadores
+ - Matemáticxs
+ - Políticos
+- Del 1.100 aC a la publicación del gráfico.
+
+** Florence Nightingale 1820-1910
+   :PROPERTIES:
+   :ID:       a1aa571f-bc52-415a-a40f-7df43863d249
+   :reveal_background: http://www.frogheart.ca/wp-content/uploads/2014/02/Rose_FlorenceNightingale1.jpeg
+   :END:
+*** Causas del fallecimiento de la guerra de Crimea
+#+attr_html: :width 300
+https://upload.wikimedia.org/wikipedia/commons/b/bb/Crimean_War%3B_Florence_Nightingale_at_Scutari_Hospital,_1856,_Wellcome_V0015400.jpg
+
+- Enfermera, escritoria y estadística
+- Considerada pionera de la enfermería moderna.
+- Creadora del primer modelo conceptual de enfermería.
+** Charles Minard 1781-1870
+   :PROPERTIES:
+   :ID:       98f68616-a545-4b61-a55c-385262c84fba
+   :END:
+
+http://www.ine.es/expo_graficos2010/imagenes/Minard_09_10_11.jpg
+
+- Ingeniero civil francés
+- Estudia ciencia y matemáticas
+
+*** Napoleón en Rusia
+    :PROPERTIES:
+    :reveal_background: https://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png
+    :ID:       e897fe76-9f41-463b-88a4-777aa051149e
+    :END:
+*** Migrantes
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/05/minard-full.jpg
+    :ID:       12c343c4-76d8-4d3f-b712-72f45b332ba6
+    :END:
+
+*** Algodón y lana
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/06/cotton-and-wool-58-to-61.jpg
+    :ID:       de8c6f12-a45e-41ac-8735-b6f1693a5061
+    :END:
+*** Algodón y lana, II
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/06/cotton-and-wool-58-to-61-graph.jpg
+    :ID:       da8963ad-3e93-4ed9-97dc-96eb79654746
+    :END:
+*** Viva el vino
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/06/wine-and-spirit-tonnage.jpg
+    :ID:       b65e7ffa-f0e4-4439-915a-f02d2011d16d
+    :END:
+*** Ríos y puertos
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/06/port-and-river-tonnage.jpg
+    :ID:       a9c68809-9fad-41c0-a438-fb3f88a0ca34
+    :END:
+*** Exportaciones de carbón británico
+    :PROPERTIES:
+    :reveal_background: https://cartographia.files.wordpress.com/2008/06/english-coal-exports.jpg
+    :ID:       7107e464-0660-455a-b95a-f05540a58073
+    :END:
+** John Snow  1813
+    :PROPERTIES:
+    :reveal_background: https://upload.wikimedia.org/wikipedia/commons/c/c7/Snow-cholera-map.jpg
+    :ID:       c3992c45-a596-458f-8c28-633cfea3090f
+    :END:
+*** John Snow 1813-1858
+    :PROPERTIES:
+    :ID:       2e0047ce-ca7a-4669-ab8c-23c3f99743a5
+    :END:
+#+attr_html: :width 200
+https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/400px-John_Snow.jpg
+
+- York, 15 de marzo de 1813 – † Londres, 16 de junio
+  de 1858)
+- Médico inglés precursor de la *epidemiología*, padre de la
+  epidemiología moderna
+- Rompió con los paradigmas existentes para la época, en pleno siglo
+  XIX, en la cual aún predominaba la fuerte creencia en la teoría
+  miasmática de la enfermedad, también denominada «teoría
+  anticontagionista»
+
+*** Buscar la fuente del cólera
+    :PROPERTIES:
+    :reveal_background: https://f.hypotheses.org/wp-content/blogs.dir/253/files/2015/02/johnsnowillustration.png
+    :ID:       72511e1e-11ec-4f0d-8875-de95ae9c18d2
+    :END:
+
+*** Mapa del cólera
+    :PROPERTIES:
+    :reveal_background: http://blog.rtwilson.com/wp-content/uploads/2012/01/SnowMap_Points-1024x724.png
+    :ID:       9fda3ce5-bfe8-4c17-854a-9453a405c285
+    :END:
+** El arte funcional
+- Escribe Alberto Cairo en El País en 2012 sobre [[http://blogs.elpais.com/periodismo-con-futuro/2012/02/elegirgrafico.html%0A][elegir un gráfico]]
+- Cita a William S. Cleveland y Robert McGill por su ensayo [[http://courses.ischool.berkeley.edu/i247/f05/readings/Cleveland_GraphicalPerception_Science85.pdf][Graphical
+  perception and graphical methods for analyzing scientific data]], 1985.
+
+
+* Algunas visualizaciones
+
+** Unix
+   :PROPERTIES:
+   :reveal_background: https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1920px-Unix_history-simple.svg.png
+   :END:
+** Small multiple
+   :PROPERTIES:
+   :reveal_background: https://graphics.axios.com/2017-03-07-aca-ahca-compare/2017-03-07-aca-ahca-compare-Desktop.png
+   :END:
+*** Obamacare subsidies vs GOP refundable tax credit
+
+- Plan que sustituye a Obamacare en 2020.
+- Quiénes ganan y pierden si los subsidios de Obamacare se convierten en créditos de impuestos del GOP.
+- La [[https://www.axios.com/comparing-the-gop-tax-credit-with-obamacares-premium-subsidy-2305136456.html%0A][Fundación Familia Kaiser]] ha compilado los datos y muestra las
+  diferencias con la actualidad. 
+
+** Compendios de herramientas de visualización
+- [[http://www.datavizcatalogue.com][Data Viz Catalogue]]
+- [[https://visualisingadvocacy.org/resources/visualisationtools][Herramientas de visualización]] de [[https://visualisingadvocacy.org][Visualising Information for Advocacy]]
+- [[https://eagereyes.org/][Visualization and Visual communication]]
+- [[http://www.anychart.com/][AnyChart]], librería de JS para visualización
+ 
+* Medialab-Prado
+  :PROPERTIES:
+  :reveal_background: http://photos4.meetupstatic.com/photos/event/4/d/d/e/highres_435379934.jpeg
+  :ID:       0cb1dcd6-145e-4982-9562-18804e59cba2
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+
+** Grupo de Periodismo de Datos
+   :PROPERTIES:
+   :ID:       370197c1-3fea-4b1d-b38b-d4eef128641f
+   :END:
+- En funcionamiento desde el 20 de octubre de 2011.
+- Se inauguró tras un seminario organizado por Medialab Prado, [[https://www.access-info.org/es/][Access Info Europe]] y [[https://civio.es][Civio]].
+- José Luis de Vicente, Victoria Anderica, David Cabo, Alberto Cairo, Pepe Cervera, Antonio Delgado y Mar Cabra. 
+
+*** Actividades
+    :PROPERTIES:
+    :ID:       2116a19e-7bd0-4961-87e2-99f00cce3b1d
+    :END:
+Durante estos 5 años hemos realizado numerosas actividades:
+
+- [[http://medialab-prado.es/article/periodismo_de_datos_-_grupo_de_trabajo][Sesiones mensuales]]
+- Talleres de producción de periodismo de datos, [[https://medialab-prado.github.io/tpd17][vamos por la quinta edición]]
+- [[http://jpd16.okfn.es][Jornadas de Periodismo de Datos]], quinta edición en 2017.
+- Difusión:
+ - [[http://listas.medialab-prado.es/cgi-bin/mailman/listinfo/grupoperiodismodatos][Lista de correo]]
+ - Hashtag [[https://twitter.com/search?q=periodismodatos&src=typd][#periodismodatos]].
+ - [[http://www.meetup.com/es-ES/Madrid-Periodismo-de-datos-Meetup/][Meetup]]
+ - [[https://github.com/medialab-prado/grupo-periodismodatos][Github]]
+** Datalab: 2017
+   :PROPERTIES:
+   :ID:       f405eb80-597d-4751-81a0-33f5f8b83059
+   :END:
+#+attr_html: :width 300 :alt Logo DataLab
+
+https://pbs.twimg.com/profile_images/854615922476281856/xIJYZ5hC_400x400.jpg
+- Nuevo laboratorio en 2016 creado en la estructura de [[http://medialab-prado.es][Medialab Prado]].
+- Actividades que se desarrollaban en Medialab, ahora agrupadas.
+- Hay otros cinco laboratorios: innovación, participación, avlab,
+  comunes y ciencia ciudadana.
+
+** Comunidades de datos
+   :PROPERTIES:
+   :ID:       91393660-edcf-4c93-a158-81d6ba6c175d
+   :END:
+
+- Día del amor por el Software Libre, Día de los Datos Abierto, Día de
+  Ada Lovelace.
+- Meetup [[https://www.meetup.com/es-ES/Madrid-Periodismo-de-datos-Meetup/][Periodismo de datos]], [[https://www.meetup.com/es-ES/Madrid-Abriendo-Datos/][Madrid Abriendo Datos]], [[https://www.meetup.com/es-ES/Data-Science-Madrid/][Data Science
+  Madrid]], [[https://www.meetup.com/es-ES/Data-Science-Spain/][Data Science Spain]], [[https://www.meetup.com/es-ES/Grupo-de-Usuarios-de-R-de-Madrid/][R Madrid]], [[https://www.meetup.com/es-ES/rladies-madrid/][R Ladies Madrid]], [[https://www.meetup.com/es-ES/EmacsMadrid/][Emacs Madrid]],
+  [[https://www.meetup.com/es-ES/Haskell-MAD/][Haskell Madrid]], [[https://www.meetup.com/es-ES/Madrid-Python-Meetup/][Python Madrid]], [[https://www.meetup.com/es-ES/MAD-for-OpenStack/][Mad4OpenStack]], [[https://www.meetup.com/es-ES/Geoinquietos-MAD/][Geoinquietos-MAD]], [[https://www.meetup.com/es-ES/Madrid-D3-js/][Madrid D3.js]]
+- Grupos de investigación de universidades, empresas, [[https://mobilitylabs.emt.es/portal][MobilityLabs EMT]]
+- [[http://medialab-prado.es/visualizar][Visualizar'17]]
+- [[http://s.coop/datamad][Concurso de datos abiertos del Ayuntamiento de Madrid]].
+
+
+* Periodismo de datos hoy
+  :PROPERTIES:
+  :ID:       101eb501-df10-40eb-b498-309becb7603e
+  :PUBDATE:  <2017-06-26 lun 12:48>
+  :END:
+#+attr_html: :width 600
+http://m.cdn.blog.hu/me/media20/image/roles_in_the_newsroom.jpg
+- Periodista con competencias informáticas
+- Desarrollador de aplicaciones de noticias
+- Especialista en visualización de datos
+
+** Chicago Crime, 2005
+- Creado por Adrian Holovaty en 2005.
+- Fundador de Django, mentor de Visualizar'07 y uno de los firmantes
+  del manifiesto por los datos abiertos en 2008.
+- Consistía en un mapa de los crímenes de la ciudad de Chicago.
+- Luego vinieron New York y San Francisco.
+- Accesible a todo el mundo.
+- Hackearon [[https://googleblog.blogspot.com.es/2005/06/world-is-your-javascript-enabled_29.html][el JS de Google para incrustar el mapa]].
+- En 2007 la Knight Foundation dona un millón de dólares para
+  [[http://everyblock.com/][EveryBlock]], para llevar a la información de cada manzana de cada
+  ciudad.
+
+** PolitiFact, 2007
+- Creado por el periódico /St. Petesburg Times/.
+- Un sitio web para comprobar la información que había dicho cada
+  político.
+- Recibe el premio Pulitzer.
+
+** England Riots
+- The Guardian se inspiró en /Detroit Riots/ para investigar las
+  revueltas juveniles de Inglaterra en 2011.
+- El germen fue el asesinato de un joven de 29 años por parte de la
+  Policía.
+- 450 detenidos en Londres en 3 días.
+- https://www.youtube.com/watch?v=_qktOvVNXwc
+- No estaba de acuerdo el Darcus Howe, periodista y activista
+  anglocaribeño, fallecido en abril de 2017, que hablaba claramente de
+  insurrección y de políticas racistas y clasistas sufridas por la
+  población durante años.
+
+** Términos para investigar
+   :PROPERTIES:
+   :ID:       574271f5-2688-457a-ae53-3b2173c8916e
+   :END:
+
+- Teoría de redes
+- Internet como espacio virtual de la comunicación
+- Relaciones horizontales, descentralizadas, dinámicas y circulares
+- Cibernética de segundo grado, sistemas inteligentes
+- Ciudades abiertas, ciudades poderosas, /Smart cities/
+- Matemáticas, estadística, documentación y recuperación de la información, programación...
+
+** ¿Nuevos medios?
+   :PROPERTIES:
+   :ID:       7be85df9-db1f-4009-825b-d8034b37523a
+   :END:
+
+Lev Manovich en [[https://uea1arteycomunicacion.files.wordpress.com/2013/09/manovich-el-legunaje-de-los-nuevos-medios.pdf][El lenguaje de los nuevos medios]], habla de sus características:
+
+- Representación numérica: 0101
+- Modularidad: capas, procesos, estructuración...
+- Automatización: cron, bot, programación...
+- Variabilidad: datos dinámicos
+- Transcodificación: conversión, parseo, exportar...
+
+** Término periodista de datos
+   :PROPERTIES:
+   :ID:       89bdcd8d-55f4-4dc1-95b6-581159776b0c
+   :END:
+
+- Periodista de Datos Abiertos, de la Web: comienza a utilizarse a
+  partir de 2011
+- Distintas competencias y aptitudes.
+- /Data Journalist/, periodista de datos, el término más utilizado en la actualidad.
+- /Computer-assisted reporter/, reportero asistido por ordenador, del original norteamericano previo a Philip Meyer pero consolidado con su /precission journalism/ o periodismo de precisión.
+- /Newsroom developer/ o desarrollador de redacción.
+- /Journo-geek/ o periodista geek, en inglés el juego de palabras funciona mejor.
+
+*** Pero no solo
+    :PROPERTIES:
+    :ID:       cafd2735-151d-4c8a-a1f0-347e971b09eb
+    :END:
+Y se añaden algunos más:
+
+- /Journo-coder/, una especie de /perio-programador/
+- /Programmer-journalist/: programador-periodista.
+- /Hacker-journalist/: hacker-periodista
+- /Journo-programmer/: /perio-programador/
+
+** Journo programmer
+- Dave Winer habla de /journo programmer/ o /periodista programador/.
+- La importancia de enlazar contenidos es comparable con la
+  importancia de procedimientos en los lenguajes de programación
+- Considera a la web como una máquina de prior-art, una forma de compartir conocimiento y saber hacer.
+
+#+BEGIN_QUOTE
+Imaginad que cada pieza de código que escribes tiene que volver al principio y definir lo que significa añadir dos números. Lo mismo ocurre con la escritura: no necesito escribir un artículo de Niemen Lab porque ya está escrito y lo puedo enlazar.
+#+END_QUOTE
+
+** Periodismo estructurado
+- Thomson Reuters y Reg Chua sobre [[http://structureofnews.wordpress.com/structured-journalism/][Structured Journalism]]
+- Pretende crear un flujo de datos más eficiente para extraer la
+  información útil y transformarla en contenido.
+
+** Stream
+
+Otro concepto que le gusta es el de /stream/, flujo o río de información que ha convertido la prensa, la información, en algo líquido.
+
+
+** Proceso
+   :PROPERTIES:
+   :reveal_background: https://upload.wikimedia.org/wikipedia/commons/4/48/Data_driven_journalism_process.jpg
+   :ID:       b5630b0f-cdd6-49b8-b917-84a74b421a55
+   :END:
+*** Las 3 dimensiones
+    :PROPERTIES:
+    :reveal_background: http://knightlab.northwestern.edu/wp-content/uploads/2013/06/venn-3-dimensions-of-data-journalism.png
+    :ID:       6bab9c01-928f-4637-8c1c-d327b87beab9
+    :END:
+
+*** The Hacker Journalist
+    :PROPERTIES:
+    :reveal_background: http://www.knightfoundation.org/media/uploads/media_images/Screen_shot_2011-06-22_at_8.51.41_AM.png
+    :ID:       df175a8d-e63d-450e-bfcb-d0703d93ba9e
+    :END:
+*** Infografía
+    :PROPERTIES:
+    :reveal_background: http://cdn1.mumbrella.com.au/uploads/2013/02/Screen-Shot-2013-02-18-at-9.08.02-AM.png
+    :ID:       2036a149-4a56-424e-b421-ffa4396ef404
+    :END:
+
+
+* Ejemplos
+
+  :PROPERTIES:
+  :reveal_background: http://mediashift.org/wp-content/uploads/sites/8/2014/06/data-journalism_AnnaSchiller.jpg
+  :END:
+
+** Internacional
+   :PROPERTIES:
+   :ID:       b29d733c-9a9a-4a0f-8019-14eb5cafd86c
+   :END:
+*** ICIJ
+    :PROPERTIES:
+    :ID:       8a815342-1556-4745-80b1-0552834818f9
+    :reveal_background: https://panamapapers.icij.org/assets/articles/home_140402.jpg
+    :END:
+
+*** The Guardian
+
+- [[https://www.theguardian.com/uk/2011/sep/05/detroit-riots-1967-lessons-uk%0A][Reading the Riot]]
+- [[https://www.theguardian.com/news/datablog+technology/data-visualisation][Data Blog + Data Visualizations]]
+- [[https://www.theguardian.com/data][Data]]
+- [[https://www.theguardian.com/australia-news/datablog/ng-interactive/2017/jun/27/census-stories-how-has-your-town-or-suburb-changed-over-10-years][Census Stories]]
+- [[http://www.guardian.co.uk/data][Data Store]]
+- [[http://www.guardian.co.uk/world-government-data][World Government Data]]
+- [[http://www.guardian.co.uk/global-development/interactive/2012/oct/04/rise-of-megacities-interactive][The Rise of Megacities]]
+
+*** Otras
+- [[http://www.themigrantsfiles.com/][The Migrants' Files]]
+- [[http://www.theinvestigativefund.org/investigations/envirohealth/1448/drugs_in_the_system/][Drugs in the System]], documental de Mar Cabra y Sarah Fiztpatrick
+  para The Investigative Fund, un proyecto de The Nation Institute.
+- [[http://www.icij.org/blog/2012/10/reporting-danger-zones][Reporting from danger zones]], artículo de ICIJ
+- [[http://storyhunter.tv/][Story Hunter]], vídeo periodismo.
+- [[http://www.knightfoundation.org/what-we-fund/innovating-media][Journalism & Media Innovation]], de Knight Foundation
+- [[http://www.tcij.org/][The Centre for Investigative Journalism]]
+- [[http://www.fixmystreet.com/][Web Fix My Street]], informa, mira o discute problemas de urbanismo,
+  una iniciativa de [[http://www.mysociety.org][mySociety]]
+- Visualización de datos electorales, como [[http://cilekagaci.com/][Çilek Aĝaci]]
+- [[http://oxpeckers.org/][Oxpeckers]], periodismo de investigación ambiental en África.
+- [[http://maps.amsterdam.nl/agenda_groen/?LANG=en][Mapas de Amsterdam]]
+
+** España
+   :PROPERTIES:
+   :ID:       9bc57dd1-b460-49b2-8cad-1355f5285fb9
+   :END:
+#+attr_html: :width 500px
+
+- [[http://www.elconfidencial.com/tags/otros/periodismo-de-datos-9977/][ElConfidencial.com]]: Daniele Grasso, Jesús Escudero, Adrián Blanco,
+  María Zuil, etc.
+- [[http://www.elmundo.es/periodismo-de-datos.html][El Mundo Data]]: Paula Guisado, Marta Ley, Hugo Garrido, Pablo Medina.
+- [[http://www.eldiario.es/temas/periodismo_de_datos/][Eldiario.es]]: Belén Picazo, Raúl Sánchez, Raúl González
+- La Sexta: Verónica Ramírez, Ignacio Calle ([[http://www.lasexta.com/noticias/papeles-panama/][informativos]]), Natalia Hernández e
+  Inés Calderón ([[http://www.lasexta.com/programas/el-objetivo/][El Objetivo]])
+- [[https://www.weblogssl.com/antonio-delgado-y-raquel-de-aymerich-se-unen-al-equipo-de-weblogs/][Weblogssl]]: Antonio Delgado
+- Nació Digital: Karma Peiró
+- Lavanguardia.com: Laura Aragó.
+- Diari de Girona: Ignacio García.
+- El Independiente: Luis Sevillano
+- Vocento: Javier Barriocanal.
+- RTVE.es: Miriam Hernández
+
+*** Y más
+- [[http://www.civio.es][Civio]]: el indultómetro, España en llamas, el BOE nuestro de cada
+  día, quién paga la obra, Medicamentalia, etc.
+- [[https://populate.tools][Populate Tools]]: Panama Papers
+
+* Formación
+** España
+- [[https://www.uc3m.es/ss/Satellite/Postgrado/es/Detalle/Estudio_C/1371210340413/1371219633369/Master_Universitario_en_Metodos_Analiticos_para_Datos_Masivos_Big_Data][Métodos analíticos para datos masivos]]
+- [[http://www.escuelaunidadeditorial.es/formacion-presencial/masteres/master-en-periodismo-de-investigacion-datos-y-visualizacion][Master URJC]]
+- [[http://periodismodatos.villanueva.edu/][Máster Villanueva]] UCM
+- [[http://www.unir.net/marketing-comunicacion/master-periodismo-datos/549200005029/][Máster UNIR]]
+- [[http://medialab-prado.es/visualizar][Medialab-Prado]]
+- [[http://datadrivenjournalism.net/course/][Data Driven Journalism]]
+** Internacional
+- Universidad de Londres
+- [[http://knightcenter.utexas.edu/es][Knight Center for Journalism in the Americas]], Austin (Texas)
+- [[http://com.miami.edu][University of Miami School of Communication]], graduado en [[http://com.miami.edu/graduate-programs/graduate-journalism-mediamanagement][MA
+  Journalism]].
+ 
+** Cursos
+- [[http://www.irekia.euskadi.net/es/news/11627-que-periodismo-datos-curso-periodismo-datos?t=1%0A][Periodismo datos Irekia]]
+** Grupos de investigación
+- [[http://klingon.uc3m.es/%0A][Tecnodoc, UC3M]]
+** Recursos
+- [[http://www.mandalka.name/investigative_journalism/][Markus Mandalka]] 
+- [[https://projects.propublica.org/graphics/data-institute-2016][ProPublica Open Data Institute 2016]]
+- [[http://tcij.org/][Center for Investigative Journalism]]
+- [[http://gijn.org/][Global Investigative Journalism Network]]
+- The Bureay of Investigative Journalism (TBIJ)
+- [[https://reportingproject.net/occrp/][Organized Crime and Corruption Reporting Project]]
+- [[http://farm9.staticflickr.com/8345/8181962079_fb84de9333_o.jpg][Data Journalist Sheet]]
+
+** Congresos
+- Jornadas de Periodismo de Datos
+- Congreso de Periodismo y Web Semántica
+- Congreso Internacional de Málaga.
+- Congreso de Periodismo de Peruggia.
+- Dataharvest
+- GEN
+- NICAR
+* Iniciativas relacionadas
+- [[http://www.access-info.org/][Acces Info]]
+- [[http://www.asktheeu.org/][Pregúntale a la UE]], iniciativa de Access Info para preguntar a las autoridades de la Unión Europea.
+- [[http://patents.stackexchange.com][Ask Patents]] pretende seguir el proceso de realización de una patente
+  en EE.UU.
+- [[http://www.ayudaaldesarrollo.es/][Ayuda al desarrollo]] de 2007-2012
+- [[http://companies.defenceindex.org/][Defence Index]], sobre la transparencia, la corrupción y ls buenas
+  prácticas en las empresas armamentísticas.
+** Iniciativas (II)
+- [[http://www.globalintegrity.org][Global Integrity]], técnicas *open source* para asegurar la
+  transparencia de los gobiernos.
+- [[http://journalistsresource.org/][Journalist's Resource]]
+- [[http://infoamazonia.org][InfoAmazonia]], información sobre el Amazonas.
+- [[http://www.mysociety.org][mySociety]] es una iniciativa que crea formas de conectar la sociedad a través de herramientas *open source* que permitan la integración y el desarrollo de servicios para las autoridades locales, las empresas y los gobiernos.
+
+- [[http://opencorporates.com/][Open Corporates]], base de datos de empresas.
+** Iniciativas (III)
+- [[http://openspending.org][OpenSpending]], cómo gastan el dinero los países.
+- [[http://poly-graph.co/][Polygraph]], proyectos de visualización de datos.
+- [[http://www.rti-rating.org/][Ranking global del Derecho a la información]], analiza la calidad de las leyes de acceso a la información de cada país. Realizado por Access Info y [[http://www.law-democracy.org/live/][Center for Law and Democracy]]
+- [[http://www.sueldospublicos.com][Sueldos Públicos]] es un proyecto de Carles Torrijos de informar de
+  los sueldos públicos en todas las administraciones del estado y de
+  informar sobre ello. Está apoyado por el [[http://www.diariosigloxxi.com][Diario Siglo XXI]] y por [[http://www.bigpress.net][Big
+  Press]]
+** Iniciativas (IV)
+- [[http://www.timeshighereducation.co.uk/world-university-rankings/][The World University Rankings]], de Thomson Reuters y Elsevier.
+- [[http://www.theyworkforyou.com/][They work for you]], sobre información de los cargos políticos.
+- [[http://www.foeeurope.org/foee-well-spent-oct2012][Well Spent]], ejemplos de *buenas prácticas* de actuaciones que han contado con los *Fondos de Cohesión de la UE*, realizado por /Amigos de la Tierra Europa/.
+- [[http://www.informationisbeautifulawards.com/][Information is Beautiful Awards]], premios de visualización de datos y diseño de información.
+* Eventos
+- Jornadas de Periodismo de Datos
+- [[http://www.tcij.org/film-week][Investigative Film Festival]], 2015
+- Follow the money in Central and Eastern Europe.
+- [[http://www.tcij.org/][The Centre for Investigative Journalism]]
+- [[https://www.ire.org/nicar/][NICAR]]
+- [[https://journalists.org/conference/][Online News Association Conference]]
+- [[https://www.globaleditorsnetwork.org/gen-summit/][Global Editors Network Summit]]
+
+* Empresas
+- [[http://www.porcentual.es/][Porcentual]], portal de noticias estadísticas para incrustar en otras
+  webs.
+* Apoyos, Grants, Financiación
+Apoyo a proyectos o /grants/
+- [[http://artsdata.challengepost.com/][Challenge Post]], 
+- Code for America's Acceletar
+- [[http://www.globaleditorsnetwork.org/][Global Editors Network]], 
+- [[http://www.informationisbeautifulawards.com/][Information is Beautiful Awards]], 
+- [[http://www.ire.org/events-and-training/google-fund/][Investigative Reporters & Editors]]
+- [[http://www.internetsociety.org/what-we-do/grants-awards/community-grants][ISOC]]
+** Apoyos (II)
+- [[http://journalismgrants.org/][Journalism Grants]],
+- [[http://www.knightfoundation.org/][Knight Foundation]] 
+- Knight Mozilla
+- [[http://maryrafteryfund.ie/][Mary Raftery Journalism Fund]]
+- [[http://www.sunlightfoundation.com/][Sunlight Foundation]] 
+- [[http://ec.europa.eu/research/participants/portal4/desktop/en/opportunities/h2020/topics/87-ict-15-2014.html][Unión Europea]], 
+- [[http://www.visualizing.org/open-challenges][Visualizing]]
+
+
+
+* Herramientas Aplicaciones
+
+
+
+** Blocks.org
+http://bl.ocks.org/
+This is a simple viewer for code examples hosted on GitHub Gist. Code up an example using Gist, and then point people here to view the example and the source code, live!
+
+The main source code for your example should be named index.html. You can also include a README.md using Markdown, and a thumbnail.png for preview. The index.html can use relative links to other files in your Gist; you can also use absolute links to shared files, such as D3, jQuery and Leaflet.
+** Buzzdata
+[[http://buzzdata.com/][Buzzdata]] es una red social de datos que permite almacenar y compartir bases de datos con otras personas y entidades especializadas en el mundo de la investigación y la comunicación.
+** CartoDB
+[[http://www.cartodb.com][CartoDB]] es una base de datos "en la nube" para ayudar a periodistas u ONGs a analizar y construir aplicaciones. También gastan [[https://twitter.com/cartoDB][twitter]]. Es de pago.
+** Crowdata
+Easily crowdsource the analysis of your documents
+
+
+CrowData is a tool to collaborate on the verification and release of data that otherwise would be hard or impossible to get via automatic tools like OCRs.
+
+You install it in a web server and right away can start uploading documents and have a form for people to send information about the documents.
+
+Authors and Contributions
+
+Crowdata is an open source project that was born when Manuel Aristaran was an Open News fellow at La Nacion in 2013. It was finally released as free software when Gabriela Rodriguez continued it for VozData in 2014. Thanks to Cristian Bertelegni and La Nacion for contributing to the code.
+https://crowdata.github.io/
+https://crowdata.readthedocs.org/en/latest/
+http://crowdata.stayover.org/
+
+** csvfix
+http://csvfix.byethost5.com/csvfix15/csvfix.html
+** csvkit
+https://csvkit.readthedocs.org/en/latest/
+** csv-validation-research
+https://github.com/theodi/csv-validation-research
+** D3Plus
+- URL: http://d3plus.org/
+- Código: https://github.com/alexandersimoes/d3plus
+
+** Dapper
+    Para hacer web scrapping
+
+** Datawrapper
+[[http://datawrapper.de][Datawrapper]] es una herramienta open source que ayuda a crear gráficos simples, bonitos y embebibles en cuestión de minutos, y es 100% Software Libre, por lo que puedes instalarlo en un servidor propio. Escrito en PHP.
+** Dedupe
+[[https://github.com/open-city/dedupe][Dedupe]] esA free python library for accurate and scaleable data deduplication and entity-resolution.
+
+** DocumentCloud
+DocumentCloud runs every document you upload through OpenCalais, giving you access to extensive information about the people, places and organizations mentioned in each. 
+Know more about your documents.
+eveal all the dates mentioned in a set of documents, and plot them on a timeline. Zoom in to view just the few critical months or days. Discover documents related to your story and explore links to the original reporting. 
+Highlight what matters.
+Annotate documents to highlight key passages. Use public notes to compose annotations that will be part of your published reporting, and private notes to organize your own thoughts. Every note has a unique URL, so you can point readers right to the passage you want to highlight.
+When St. Louis Public Radio published thousands of pages of grand jury testimony, forensic reports and other documents related to the death of Michael Brown in Ferguson, Mo., they served their audience by identifying passages containing key eyewitness accounts.
+Share your work.
+Everything you upload to DocumentCloud stays private until you're ready to make it public, but once you decide to publish, your documents join thousands of other primary source documents in our public catalog. Use our document viewer to embed documents on your own website and introduce your audience to the larger paper trail behind your story.
+From our catalog, reporters and the public alike can find your documents and follow links back to your reporting. DocumentCloud contains court filings, hearing transcripts, testimony, legislation, reports, memos, meeting minutes, and correspondence. See what's already in our catalog. Make your documents part of the cloud.
+If you regularly report on primary source documents,
+DocumentCloud can help you get the most out of them. 
+https://www.documentcloud.org/home
+
+** Detective.io
+[[http://detective.io][Detective.io]], herramienta de visualización.
+
+** Geomatics
+[[http://www.gatewaygeomatics.com][Gateway Geomatics]] es una empresa de consultoría que ofrece servicios FOSS4G, Free and Open Source Software for Geospatial, Software Libre y de Código Abierto para aplicaciones geoespaciales. Se ocupa de compartir información espacial a través de estándares de publicación. Utiliza mapas de [[http://www.mapserver.org][MapServer]], un servicio de mapas web open source. TAmbién GDAL, MS4W, QuantumGIS, GRASS y PostGIS/PostgreSQL.
+
+** Gephi
+ [[https://gephi.org][Gephi]] es un programa de código abierto para la visualización y consulta de grafos. Tiene la particularidad que permite manejar grafos grandes (de miles de nodos) con muy buen rendimiento. Permite agrupar nodos del grafo, pintarlos de diferntes colores, darle tamaños proporcionales a indicadores, hacer los arcos entre nodos mas gruesos dependiendo de diversos factores, etc.
+Permite la importación de archivos en los formatos mas comunes para grafos. También se pueden utilizar archivos separados por comas, haciendo mas fácil aun la lectura de dichos grafos y el uso de bases de datos SQL.
+Se puede ver un ejemplo de la evolución de [[http://www.youtube.com/watch?v=2guKJfvq4uI][la revolución de Egipto en Twitter]]. [[http://gephi.org/tutorials/gephi-tutorial-quick_start.pdf][tutorial en PDF]], [[http://wiki.gephi.org/index.php/Datasets][Fuentes de datos]]
+
+** Google Cloud Datalab
+- URL: https://datalab.cloud.google.com/
+- Código: https://github.com/GoogleCloudPlatform/datalab
+- Beta: https://cloud.google.com/datalab/
+
+Explore, transform, analyze, and visualize your data using Google Cloud Platform.
+Connected and Integrated
+
+Cloud Datalab makes it easy to securely access all your data and public datasets, and use the power of Google BigQuery with SQL and Python to explore, visualize, analyze, and transform data.
+
+Interactive and Familiar
+
+Cloud Datalab enables working with code and data in an interactive notebook environment. Use notebooks to share and publish insights, or go further to develop, test, and deploy your data processing pipelines.
+
+** Google Fusion
+    Mapas y representaciones visuales
+** Google Refine
+    https://code.google.com/p/google-refine/
+Limpieza de datos, trabajar con formatos no amigables
+Se ha convertido en [[https://code.google.com/p/google-refine/][Open Refine]]
+** GraphCommons
+http://graphcommons.com/
+** IBM
+Agrupadas en [[https://www.ibm.com/analytics/us/en/][Analytics]]:
+- SPSS
+- Db2
+- Watson
+- Cognos
+
+** Jigsaw
+Analítica visual para explorar y comprender conjuntos de documentos
+http://www.cc.gatech.edu/gvu/ii/jigsaw/
+** Kettle
+http://community.pentaho.com/projects/data-integration/
+Data Integration (or Kettle) delivers powerful Extraction, Transformation, and Loading (ETL) capabilities, using a groundbreaking, metadata-driven approach.
+Recursos:
+- Introduction to Pentaho Keetle http://www.slideshare.net/boulderjug/introduction-tokettledanmoore82013?qid=bba12fd4-9478-40bc-b7b7-c765eeccf9e1&v=default&b=&from_search=7
+
+
+
+** Many Eyes
+ [[http://www-958.ibm.com/software/data/cognos/manyeyes/][Many Eyes]], programa de IBM y Cognos para visualizar datos. Hay que registrarse.
+** Mapstory
+http://mapstory.org/
+MapStory is an online social cartographic platform developed by the MapStory Foundation since April 2012. Its goal is to empower the community of experts to crowd-source and peer review data within a geospatial and temporal framework. The platform is built upon the OpenGeo software stack. 
+The MapStory platform is an online cartographic application developed using the GeoNode open-source platform. GeoNode is a spatial data infrastructure solution that extends the OpenGeo Architecture with several advanced features such as participatory or collaborative mapping, advanced customization, social network capabilities and metadata catalog solutions.
+
+The Open Database License (ODbL) from Open Data Commons (ODC) is used for the underlying datasets committed to MapStory. Creative Commons licenses are then used for user representations of data (MapStories). This means that users are free to copy, distribute, transmit and adapt the site's maps and data as long as appropriate citations are being observed.
+** Morris.js
+https://morrisjs.github.io/morris.js/
+Charts
+
+** Network Workbench
+http://nwb.cns.iu.edu/
+Network Workbench: A Large-Scale Network Analysis, Modeling and Visualization Toolkit for Biomedical, Social Science and Physics Research.This project will design, evaluate, and operate a unique distributed, shared resources environment for large-scale network analysis, modeling, and visualization, named Network Workbench (NWB). The envisioned data-code-computing resources environment will provide
+
+** NodeXL
+https://www.nodexlgraphgallery.org/Pages/Default.aspx
+NodeXL is a free, open-source template for Microsoft® Excel® 2007 and 2010 that lets you enter a network edge list into a workbook, click a button, and see the network graph, all in the familiar environment of the Excel® window.
+
+With NodeXL, you can easily
+
+Customize the graph's appearance
+Zoom, scale and pan the graph
+Dynamically filter vertices and edges
+Alter the graph's layout
+Find clusters of related vertices
+Calculate graph metrics
+Import and export graphs to a variety of file formats
+Get social networks using built-in connections to Twitter, Flickr, YouTube and email
+If you use Excel® 2007 or 2010, you can download and use NodeXL now.
+
+NodeXL is brought to you by the [[http://www.smrfoundation.org/][Social Media Research Foundation]], a group of researchers dedicated to creating open tools, generating and hosting open data, and supporting open scholarship related to social media.
+** Open Refine
+http://openrefine.org/
+** Open Heat Map
+http://www.openheatmap.com/edit.html
+
+
+** Panda Project
+http://pandaproject.net/
+
+** PeopleBrowr
+[[http://www.peoplebrowsr.com/About][Realizan estadísticas]] de redes sociales y ofrecen los datos en formato CSV. La aplicación de pruebas es gratuita pero luego hay que pagar por seguir usándola.*** PhiloGL 
+ [[http://www.senchalabs.org/philogl/][PhiloGL ]]
+** PhiloGL 
+ [[http://www.senchalabs.org/philogl/][PhiloGL ]]
+**** Raw
+http://app.raw.densitydesign.org/
+Raw is an open web tool developed at the DensityDesign Research Lab (Politecnico di Milano) to create custom vector-based visualisations on top of the amazing d3.js library. The tool aims at providing a missing link between spreadsheet applications (e.g. Microsoft Excel, Apple Numbers, OpenRefine) and vector graphics editors (e.g. Adobe Illustrator, Inkscape, ...).
+
+Knowing the need of working with sensitive information, the data uploaded to Raw is processed only by the web browser: no server-side operation or storage are performed - no one will see, touch or copy your data!
+
+Raw is also highly customisable and extensible, accepting new custom layouts defined by users. 
+
+** Query Tree
+Query Tree is a drag and drop tool for working with data. As a user it is useful because you can connect a number of tools together in a chain to achieve quite complicated results, or just learn the one or two tools that you need and ignore the rest
+http://goo.gl/oWJgm
+
+** RAW
+RAW, creada por [[http://www.densitydesign.org][DensityDesign]] del Politécnico de Milán.
+
+** SciTool
+https://sci2.cns.iu.edu/user/index.php
+The Science of Science (Sci2) Tool is a modular toolset specifically designed for the study of science. It supports the temporal, geospatial, topical, and network analysis and visualization of scholarly datasets at the micro (individual), meso (local), and macro (global) levels.
+
+** ScrapperWiki
+https://scraperwiki.com/
+** Tableau Public
+ [[http://www.tableausoftware.com][Tableau Public]], programa para visualizar datos. Hay que descargarlo en Windows.
+** Tabula
+http://tabula.nerdpower.org/
+
+** Timeliner
+http://timeliner.okfnlabs.org
+Make elegant timelines and timemaps using Google Spreadsheets. Create a Spreadsheet
+We suggest you copy this template so that columns have the right names. Publish the Spreadsheet
+Publish your spreadsheet - see File menu → Publish to Web in Google Docs. Connect it to Timeliner
+Paste the spreadsheet URL (e.g. ) into the form above and hit Load.
+
+** TimeMapper
+[[http://timemapper.okfnlabs.org/][TimeMapper]], Elegant timelines and maps created in seconds
+The site is a simple node.js app with storage into s3. The timemap viz is pure JS built using KnightLabs excellent Timeline.js for the timeline and Leaflet (with OSM) for the maps. For those interested in the code it can be found here: https://github.com/okfn/timemapper/ 
+http://okfnlabs.org/blog/2013/10/11/timemapper.html
+
+** Transcribable
+During the 2012 election, ProPublica created an news application called Free the Files that crowdsourced political TV spending by asking users to transcribe certain data points from FCC filings. This Rails plugin extracts the "transcribable" bits from Free the Files so anyone can crowdsource data out of documents, as long as they're stored in DocumentCloud. This gem will handle building out the models, controllers and views you need, and it will also assign out documents and verify the data you get back.
+https://github.com/propublica/transcribable
+
+** Twitter Social Graph Network
+https://github.com/ianozsvald/twitter-social-graph-networkx
+Descarga, resume y visualiza los seguidores de Twitter usando NetworkX
+
+** Visual Investigative Scenarios
+[[http://vis.occrp.org/][Visualization.]]
+
+** Windows
+- Cygwin if you want a full Linux-like desktop, including a terminal, webservers and an X Windows option
+- Run a Linux (or FreeBSD / PC BSD) virtual machine with VMware, VirtualBox or even Windows Client Hyper-V. This is what I recommend
+for those who want a full Linux desktop.
+- Install a Python distribution like Anaconda, which gets you lots of nifty data science and regular expression tools along with a
+usable command line. And Python.
+- Git for Windows (http://msysgit.github.io/). This gives you Git, the MSys command line and the option to set the PATH on its command line to get an MSys sort, grep, bash, etc. in addition to the default, which is just bash and git. It may have Perl and it may have Python as well; It does not have Ruby
+** xls-split
+https://github.com/ldodds/xls-split
+
+
+** Yahoo Pipes
+http://pipes.yahoo.com/pipes/
+
+** Yed
+Editor gráfico de diagramas
+https://www.yworks.com/en/products/yfiles/yed/
+
+* Datos
+** Datos abiertos
+*** [[http://theodi.org/][The Open Data Institute]]
+Creado por Tim Berners-Lee y Nigel Shadbolt. Ofrece:
+- [[https://certificates.theodi.org/datasets][Datos]]
+- [[http://theodi.org/lunchtime-lectures][Conferencias]]
+- [[http://theodi.org/education-open-data-challenge-series][Retos]]
+ - hola
+** Datos gubernamentales
+- [[http://www.data.gov][Data.gov]], portal de datos de EE.UU. You can find Federal, state and local data, tools, and resources to conduct research, build apps, design data visualizations, and more.
+
+The Data.gov team works at the U.S. General Services Administration, but the site itself is [[https://github.com/GSA/data.gov/][open source]], and we’d love your help making it even better.
+
+- [[https://gds.blog.gov.uk/][Government Digital Service, UK]]
+** Certificaciones
+- [[https://certificates.theodi.org/][Open Data Institute]],
+** Empresas
+*** [[http://www.socrata.com/][Socrata]]
+*** [[http://www.porcentual.es/][Porcentual]]
+portal de noticias estadísticas para incrustar en otras webs.
+El periodismo de datos cada vez gana más importancia en la sociedad. Vivimos rodeados de números, cifras y porcentajes que tratan de aproximarnos a la realidad de una forma más exacta. Porcentual.es nace con la intención de poner en valor este tipo de informaciones y hacerlas más accesibles. Por eso ponemos a disposición de todos los usuarios una serie de gráficos que tratan de explicar mejor esta realidad. Medios de comunicación digitales, gabinetes de comunicación, empresas, blogueros o cualquier otro tipo de usuario podrá descargar e insertar en su espacio web nuestras informaciones y gráficos, con lo que mejorará el aspecto de sus noticias e informaciones. Además, también puede utilizar nuestra zona Premium en la que dispondrá de varias opciones para personalizar los gráficos.
+*** Column Five Media
+[[http://columnfivemedia.com/][Column Five Media]], empresa de creadores de contenido visual.
+*** Fondaki
+[[http://www.fondaki.com][Fondaki Inteligencia Pública]] es el primer servicio europeo de inteligencia pública. Utilizan tecnologías y metodologías punteras de análisis de información pública para obtener oportunidades comerciales y de innovación al servicio de pequeñas empresas, cooperativas, ONGs y cargos electos.
+
+Lo que mueve su trabajo es la convicción de que sólo una sociedad que dispone de una inteligencia real de lo que pasa fuera de sus fronteras, es capaz de valorar sensatamente riesgos y oportunidades, hacerse preguntas, plantearse retos y abrir nuevos caminos de bienestar común.
+¿Por qué Fondaki?
+Resiliencia
+
+Elaboran un [[http://fondaki.com/tag/resiliencia/][Boletín diario, Resilencia]],con enlaces enriquecidos a noticias procedentes de fuentes de todo el mundo que construye un relato geopolítico esencial para cambiar la mirada y abrir el campo de juego.
+Procesa diariamente información de millares de fuentes públicas de todo el mundo en tiempo real (noticias, boletines oficiales, blogs, informes de centros especializados, cuentas de resultados, etc.). Sus analistas multidisciplinares Utilizan herramientas punteras de análisis para localizar los elementos críticos -muchas veces invisibles. Diariamente los equipos discuten los resultados y los ordenan en función de los intereses de sus clientes.
+A partir de este trabajo se realizan análisis de redes y estratégicos. Finalmente, con toda la información ya organizada se elaboran informes de innovación tecnológica y organizativa, oportunidad comercial y tendencias legislativas que dan forma y marco a nuestros proyectos, productos y servicios para empresas e instituciones públicas.
+
+*** Dataveyes
+[[http://dataveyes.com/][Dataveyes]] es una empresa francesa de visualizaciones interactivas.
+
+* Geodatos
+- [[http://learnosm.org/en/%0A][Aprende OSM]]
+- [[http://hot.openstreetmap.org/%0A][HOT Humanitarian OpenStreetMap Team]]
+
+* Visualización
+** Enlaces que hay que seguir
+- Journalists, designers, statistics, and the scientific method http://www.thefunctionalart.com/2013/01/journalists-designers-statistics-and.html
+- About the Malofiej Infographics Summit http://juanvelascoblog.com/2013/01/14/malofiej-21st-infographics-world-summit-announced/
+
+* Podcasts
+
+** Fellow the data
+Fellow the data comenzó en 20160418 para hablar sobre cómo su trabajo
+afecta en la educación, las artes, el medio ambiente, la salud pública
+y la innovación gubernamental.
+
+Nace bajo la premisa del fundador Mike Bloomberg de que si no puedes
+medirlo, no puedes manejarlo, y es lo qu ehace tan importante que
+tenga que haber estrategias guiadas por datos que estén en el core de
+su trabajo.
+
+Los podcasts comienzan con unxs invitados que compartirán sus
+experiencias y proyectos sobre el impacto de los datos.
+
+Se pueden descargar de iTunes o de SoundCloud.com/Follow-The-Data
+
+https://soundcloud.com/follow-the-data/follow-the-data-podcast-episode-1-moving-beyond-coal
+
+** Journalism News
+- Podcasts: https://soundcloud.com/journalismnews
+- URL: https://journalism.co.uk
+- Software: Soundcloud
+
+News, digital tools and tips for journalists and publishers from
+Journalism.co.uk
+
+** Datastories
+- Podcasts: https://soundcloud.com/datastories
+- URL: http://datastori.es/
+- Software: https://github.com/podlove/podlove-web-player
+- CMS: Wordpress
+
+ A podcast on data visualization with Enrico Bertini and Moritz
+  Stefaner 
+ 
+** School of Data
+** Ecos de Medialab
+* Otros proyectos
+** Education Budget Tracker		    :education:budget:followthemoney:
+http://followthemoneyng.org/educationtracker.html
+** Budget Watch
+http://www.rappler.com/move-ph/issues/budget-watch
+#BudgetWatch is democracy at work: a platform for government & concerned citizens to share information and map action points for a transparent & accountable national budget.
+** Passing On
+- URL: http://passingon.natematias.com/
+- Autoría: Nathan Matias at natematias@gmail.com.
+
+Passing On is a design experiment in using data, stories, and cooperation to change women's representation online. This app, along with Open Gender Tracker and FollowBias, forms a trio of projects that expand how we measure and change women's visibility in the media.
+
+
+
+
+
+

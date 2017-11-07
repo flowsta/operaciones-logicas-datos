@@ -1,0 +1,54 @@
+#+LANGUAGE: es
+#+CATEGORY: manual, presentación, congreso, ponencia
+#+TAGS: commandline, línea de comandos, ls, pwd, mkdir, cd, touch, cp, mv, stdin, stdout, stderr, posix, diff, grep, egrep, find, awk, sed
+#+DESCRIPTION: Acometer un proyecto en Medialab-Prado
+#+TITLE: Operaciones lógicas con datos. Bibliografía
+#+DATE: <2017-05-06 sáb 10:00>
+#+AUTHOR: Adolfo A. Bravo y Pilar J. López
+#+EMAIL: adolfo@medialab-prado.es y pilarjlopez@hotmail.com
+#+OPTIONS: todo:nil pri:nil tags:nil ^:nil 
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:nil
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
+#+REVEAL_POSTAMBLE: <p> Creado por adolflow. </p>
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+* Referencias bibliográficas                                             :OK:
+
+- Find: http://www.binarytides.com/linux-find-command-examples/
+- Aristarain, Manuel & Tigas, Mike & Merril, Jeremy B. (2014) /Scraping PDFs with Tabula/. URL: https://s3.amazonaws.com/media.miketigas.com/files/20140627/20140627-tabula-IRE2014-withnotes.pdf
+- Crucianelli, Sandra. (2013) /Herramientas digitales para periodistas/. Centro Knight para el Periodismo en las Américas de la Universidad de la Universidad de Texas. URL: https://knightcenter.utexas.edu/books/HDPP.pdf
+- García Santiago, Lola. (2003) /Extraer y visualizar información en Internet: el Web Mining/. Gijón: Ediciones Trea
+- Gray, Jonathan & Bounegru, Liliana & Chambers, Lucy. (2012) /Data Journalism Handbook/. European Journalism Centre y Open Knowledge Foundation. URL: http://datajournalismhandbook.org/
+- Kayser-Brill, Nicolas. (2014) /Data wants to be free! (and clean)/. Medialab-Prado. URL: http://bit.ly/free-clean
+- Méndez Rodriguez, Eva Mª. (2002) /Metadatos y Recuperación de información: estándares, problemas y aplicabilidad en bibliotecas digitales/. Gijón: Trea
+- Nguyen, Dan. (2010) /Chapter 3: Turning PDFs to Text/. Propublica, Journalism in the Public Interest. URL: https://www.propublica.org/nerds/item/turning-pdfs-to-text-doc-dollars-guide
+- Nguyen, Dan. (2010) /Chapter 5: Getting Text Out of an Image-Only PDF/. ProPublica, Journalism in the Public Interest. URL: https://www.propublica.org/nerds/item/image-to-text-ocr-and-imagemagick
+- Schoolofdata, (2014) /Obteniendo datos de los PDF/. Web: School of Data. URL: http://es.schoolofdata.org/obteniendo-datos-de-los-pdfs/
+- Cómo utilizar /Google OCR/,  https://www.youtube.com/watch?v=DPJJON26Do4
+- Introducción al scraping de /PDF/, http://www.irekia.euskadi.eus/es/news/11703-introduccion-google-refine-curso-periodismo-datos
+- Primeros pasos con Emacs,
+  http://elblog.deshackra.com/blog/2014/10/14/gnu-emacs-primeros-pasos-i/
+- https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+- Learning the Shell, http://linuxcommand.org/lc3_learning_the_shell.php
+- [[http://s.coop/commandline][Cómo utilizar la línea de comandos como periodista]], manual de Óscar
+  Corcho presentado en las [[http://jpd14.okfn.es][II Jornadas de Periodismo de Datos de
+2014]].
+- Repo de [[https://github.com/rgrp][Rufus Pollock]] llamado [[https://github.com/rgrp/command-line-data-wrangling][Command Line Data Wrangling]].
+- [[https://github.com/flowsta/markdown][Mis apuntes de Markdown]]
+- [[http://docs.podigee.com/guides/markdown-cheatsheet.html][Markdown Cheatsheet]]
+- [[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf][R Markdown Cheatsheet: R, Markdown y YAML]]
+- https://knightcenter.utexas.edu/blog/00-13785-five-tools-extract-locked-data-pdfs
+- http://www.reporterslab.org/pdf-to-spreadsheet-update/
+- OpenOffice, http://forum.openoffice.org/en/forum/viewtopic.php?t=43632
+

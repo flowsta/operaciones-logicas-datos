@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Mapa escolar del fibrociment</name>
+    <description><![CDATA[Relació de centres educatius valencians que tenen instal·lacions amb fibrociment semblants a les del CEIP Ciutat de Bolonya. Resposta a la sol·licitud de documentació presentada per Esquerra Unida a la Conselleria d'Educació i obtinguda -només- mitjançant sentència judicial del TSJCV (contenciós-administratiu 507/13).]]></description>
+    <Style id="icon-22-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-22-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-22">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-22-nodesc-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-22-nodesc-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-22-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Capa sin nombre</name>
+      <Placemark>
+        <name>CP Concepción Arenal (Villareal)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.107124,39.938123,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CEIP Els Garrofers (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.741252,38.231026,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Hispanidad (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.693804,38.261552,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Nuestra Señora De La Asunción (Vinaròs)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            0.472246,40.472823,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Sanchís Guarner (Ondara)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            0.022298,38.827196,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Virgen de la Asunción (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.707631,38.2653,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CPFA (antiguo CP El Serafico, Elda)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.800057,38.487087,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CIPFP Faitanar (Quart de Poblet)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.433313,39.479281,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CIPFP La Costera (Xàtiva)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.515606,38.990937,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CIPFP Vicente Blasco Ibáñez (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.368365,39.463678,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Conservatori Profesional (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.693085,38.273376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Alborxí (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.443898,39.151665,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Alfadalí (Oliva)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.112887,38.911459,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Antonio Machado (Elx - Torrellano)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.586546,38.29064,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Antonio Sequeros (Benejúzar)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.833911,38.080883,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Argentina (Benferri)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.966624,38.145848,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Ausiàs March (Alzira)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/8Rv_GuW6n1g-LqK7YsiaY-ikm1_vbYUUWFvP2HAV_0NfpqTsydOEIjlaiJ0-WVKUFK0axod5ktax1fbDe3jt8jzImEbAhS1QoNM9_5oYG4FrVAbA_U26bn2818nfWt49yaD5NUH6llC8" height="200" width="auto" /><br><br>46600 Alzira, Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/8Rv_GuW6n1g-LqK7YsiaY-ikm1_vbYUUWFvP2HAV_0NfpqTsydOEIjlaiJ0-WVKUFK0axod5ktax1fbDe3jt8jzImEbAhS1QoNM9_5oYG4FrVAbA_U26bn2818nfWt49yaD5NUH6llC8</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.435449,39.144968,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Azorín (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.470329,38.363317,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Azorín (Santa Pola)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.551183,38.196269,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Baix Vinalopó (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.700641,38.270584,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Benimamet (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.406628,39.494788,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Bonavista (Alaquàs)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.452666,39.455376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Canales y Martínez (Almoradí)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.787303,38.108231,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Cardenal Belluga (Crevillent - San Felipe)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.796982,38.177749,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CEIP Carles Salvador (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.36317,39.48767,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Casablanca (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.703059,38.276492,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Cervantes (Monòvar)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.836882,38.434334,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Cervantes (Alboraia)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.347237,39.50265,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Ciudad Artista Fallero (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.392309,39.499542,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Cristóbal Colón (Sax)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.825428,38.533765,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CP Dama d'Elx (Elx)]]></name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.704616,38.255217,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Doctor López Rosat (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.395921,39.464972,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público de Educación Especial Tamarit (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.682049,38.267154,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP El Barranquet (Godella)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.41343,39.52518,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP El Moralet (Alacant)</name>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/0yc6RuW7rWI2fmnRmAS_GKRgzvZ2S23j_MsUYqHEnwWNuj9ycsMPEYGTSnuSbDd1PSSi_NGBiYkMF5Uuuxz-kUIkQfE1XXKYfOTC3HBrrTsoP74QCd9R7z96sRJ-vs_jem0GHghsWvoL" height="200" width="auto" /><br><br>Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/proxy/0yc6RuW7rWI2fmnRmAS_GKRgzvZ2S23j_MsUYqHEnwWNuj9ycsMPEYGTSnuSbDd1PSSi_NGBiYkMF5Uuuxz-kUIkQfE1XXKYfOTC3HBrrTsoP74QCd9R7z96sRJ-vs_jem0GHghsWvoL</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.571849,38.445491,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público El Toscar (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.716228,38.271848,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Emilio Valera (Alacant)</name>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/eEXlNGGt8-BrysAKEyfY8kvNuEpOJe4vSNqg6S0ocAs00scDfYdJcQnhf29VFkfhdHTSqs_DJ7xokxUNJlwPv-zq-2Z9BbNeckR6iutBHfWbi97VF3lrULZAPgKjCkyWkLW07WXPI6dj" height="200" width="auto" /><br><br>03011 Alacant]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/proxy/eEXlNGGt8-BrysAKEyfY8kvNuEpOJe4vSNqg6S0ocAs00scDfYdJcQnhf29VFkfhdHTSqs_DJ7xokxUNJlwPv-zq-2Z9BbNeckR6iutBHfWbi97VF3lrULZAPgKjCkyWkLW07WXPI6dj</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.495921,38.376437,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Evaristo Calatayud (Montserrat)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.656347,39.397093,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Félix Rodríguez de la Fuente (Manises)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.45605,39.494106,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Fernando de Loaces (Oriola)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.940176,38.089135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Gabriel Miró (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.506098,38.346485,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Giner de los Ríos (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.706201,38.271901,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Gloria Fuertes (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.486121,38.373456,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Inmaculada Concepción (Torrevieja)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.686788,37.981486,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Jaume I (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.716553,38.274017,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Jaume I (Alcàsser)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.447266,39.37162,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Jaume I El Conqueridor (Catarroja)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.411838,39.40202,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Jaume I (Mislata)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.413125,39.475822,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Joanot Martorell (Xeraco)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/GH2obt-raie1RHZFwXVsLoCy7Oecnw6AEuGMVKOnz62bY3z-5do36BIntGgoe2vmNqR00c04XtrSMfBCaBRoQrwASFjm52Jz1CG1QY5zC1abg4YPDn8Io4xHJ1x7oDb4pp4aR3eTlu9E" height="200" width="auto" /><br><br>46770 Xeraco, Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/GH2obt-raie1RHZFwXVsLoCy7Oecnw6AEuGMVKOnz62bY3z-5do36BIntGgoe2vmNqR00c04XtrSMfBCaBRoQrwASFjm52Jz1CG1QY5zC1abg4YPDn8Io4xHJ1x7oDb4pp4aR3eTlu9E</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.217766,39.036732,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Joaquín María López (Alacant)</name>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/c8FUqKKaDSGl2r99IfGeAzdNH_nPp2PhLEPSZZ054_Mu2moESQJW1XTSCnIDuxel4Fm63LVeECjGYrmybBY6fGGfQy6AZm6FWQvUBQ9P8XQIh8vGQI7HJBzbZCe3zct4gc77ctk0mNka" height="200" width="auto" /><br><br>03009 Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/proxy/c8FUqKKaDSGl2r99IfGeAzdNH_nPp2PhLEPSZZ054_Mu2moESQJW1XTSCnIDuxel4Fm63LVeECjGYrmybBY6fGGfQy6AZm6FWQvUBQ9P8XQIh8vGQI7HJBzbZCe3zct4gc77ctk0mNka</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.501717,38.365588,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP José Carlos Aguilera (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.500122,38.343065,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Ferrández Cruz (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.695208,38.267196,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP José María Paternina (Daya Nueva)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.75948,38.112902,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Juan Carlos I (Formentera del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.744834,38.084684,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Juan Lacomba Guillot (Xella)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.381775,39.036253,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Julio María López Orozco (Elx)</name>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/xseDER5uU1RctVbRYr7njexam_bp_l-ouB8KshMLpKOKxXv1hN2vNCoZiSxSeTzFxHPrvqU6MkHDPaUknfQyOs1Pq4SuNeerEr5cYo4Rf63fBDwdWU3gbi42K4E0oZPj4iWpKhDIoRR-" height="200" width="auto" /><br><br>Elche, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/proxy/xseDER5uU1RctVbRYr7njexam_bp_l-ouB8KshMLpKOKxXv1hN2vNCoZiSxSeTzFxHPrvqU6MkHDPaUknfQyOs1Pq4SuNeerEr5cYo4Rf63fBDwdWU3gbi42K4E0oZPj4iWpKhDIoRR-</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.716206,38.276512,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP La Galia (Elx - Altabix)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.68499,38.27146,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP La Marina (Elx - La Marina)</name>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/XnKnJFBph383vppmBYcBRzUGcu-5gQxFpNPRDV_ETQfJwkUJw6Uo6vtIcJ4K9y2Z3VdaMZ7cgrOnhTriyjX0DREOoAiwXpXAcFDi6_-_0S9OerLlBJG3fTIoXy8D0b9WD7oBL45F8tBJ" height="200" width="auto" /><br><br>Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/proxy/XnKnJFBph383vppmBYcBRzUGcu-5gQxFpNPRDV_ETQfJwkUJw6Uo6vtIcJ4K9y2Z3VdaMZ7cgrOnhTriyjX0DREOoAiwXpXAcFDi6_-_0S9OerLlBJG3fTIoXy8D0b9WD7oBL45F8tBJ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.645556,38.145833,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP La Paz (Bigastro)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.586942,38.295195,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP La Paz (Bigastro)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.586942,38.295195,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP La Paz (Callosa del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.87767,38.12567,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP León Felipe (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.710798,38.270082,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CP Les Comes (L'Alcúdia)]]></name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.504826,39.192366,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CP L'Horta (Paiporta)]]></name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/jC0_L-u1-4afApyHGgjHGwPNnLCQnorl_ZYOnSjM2-DPoGewgQy0PPVOS1GzP90WxLeRCme8SDTUnbkC_pnrzjiiJvxWn01zv_Gf1nxQmVEkd5YsjkUW4ue0dAafw_sc8w4LznlpWD9s" height="200" width="auto" /><br><br>46200 Paiporta, Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/jC0_L-u1-4afApyHGgjHGwPNnLCQnorl_ZYOnSjM2-DPoGewgQy0PPVOS1GzP90WxLeRCme8SDTUnbkC_pnrzjiiJvxWn01zv_Gf1nxQmVEkd5YsjkUW4ue0dAafw_sc8w4LznlpWD9s</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.4234,39.427355,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Lluis Guarner (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.399246,39.494591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Luís Cernuda (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.695017,38.269581,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Luís Chorro (Elx)</name>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/kkyCre-i_sbkl9mFogLkRkX23LxTYkYyOfYLTw8q5pMVAdpnbRv7G3iWFCx1wUZ6IcEGmxz0ENiJ1gtun7ndy72FbxAdCHvIiMh2e650oBTblbzNNzCpSRuLuzgC3WPafXZbspfmU8_a" height="200" width="auto" /><br><br>03203 Elche, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/proxy/kkyCre-i_sbkl9mFogLkRkX23LxTYkYyOfYLTw8q5pMVAdpnbRv7G3iWFCx1wUZ6IcEGmxz0ENiJ1gtun7ndy72FbxAdCHvIiMh2e650oBTblbzNNzCpSRuLuzgC3WPafXZbspfmU8_a</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.684251,38.264284,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Luís Vives (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.70445,38.254345,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Lluis Vives (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.43785,39.15173,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Lluís Vives (Oliva)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.122102,38.924787,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Maestro Ismael García (Oriola, La Murada)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.962559,38.172387,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Magisterio Español (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.361517,39.455235,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Manuel de Torres (Almoradí)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.798812,38.105198,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Manuel González Martí (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.385268,39.486585,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CP Manuel Sanchís Guarner (L'Olleria)]]></name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.545213,38.915426,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Doctor Francisco Mas Magro (Crevillent)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.810434,38.25432,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Menéndez Pelayo (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.709047,38.277624,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Mestre Canaletes (Elx - Perleta)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.677896,38.264179,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Narciso Merino (Elx, Las Bayas)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.515101,38.330614,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Miguel de Cervantes (Algorfa)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.795566,38.086082,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Miguel de Unamuno (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.702757,38.262833,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Miguel Hernández (Crevillent)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.8137,38.24427,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Miguel Hernández (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.685813,38.266884,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Nº 54 (Alacant)</name>
+        <description><![CDATA[<img src="https://lh4.googleusercontent.com/proxy/c8FUqKKaDSGl2r99IfGeAzdNH_nPp2PhLEPSZZ054_Mu2moESQJW1XTSCnIDuxel4Fm63LVeECjGYrmybBY6fGGfQy6AZm6FWQvUBQ9P8XQIh8vGQI7HJBzbZCe3zct4gc77ctk0mNka" height="200" width="auto" /><br><br>03009 Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh4.googleusercontent.com/proxy/c8FUqKKaDSGl2r99IfGeAzdNH_nPp2PhLEPSZZ054_Mu2moESQJW1XTSCnIDuxel4Fm63LVeECjGYrmybBY6fGGfQy6AZm6FWQvUBQ9P8XQIh8vGQI7HJBzbZCe3zct4gc77ctk0mNka</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.501717,38.365588,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Ntra. Sra. de los Desamparados (Burjassot)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.404024,39.5046,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Nuestra Señora del Carmen (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.335549,39.474288,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Nuestra Señora de Monserrate (Oriola - Molins)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.907888,38.082767,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Orba (Alfafar)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.400409,39.417324,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Padre Jumilla (Càrcer)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.566456,39.0683,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Párroco Francisco Más (Crevillent)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.807977,38.247898,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Príncipe Don Juan Manuel (Villena)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.862268,38.639839,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Profesor Sanchís Guarner  (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.37788,39.49244,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Rafael Altamira (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.516038,38.344797,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Rafael Altamira (Callosa del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.87649,38.12761,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Ramón Laporta (Quart de Poblet)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.447309,39.481312,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Ramón Llull (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.712203,38.265179,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Raquel Payá (València)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/kWSEjAFo_LGacvQdGjSphFh1etlAJywbfKIDrC0nIXqQC3nOrPr9J_QYXvPCjP9Al7bMo9aQjpVpPMUXbDn1iDaopv20cnjFkZvHwNZY6-WRhgrL3KtJXBns4qWGc-oHxWB_2fIC2Dat" height="200" width="auto" /><br><br>46018 València, Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/kWSEjAFo_LGacvQdGjSphFh1etlAJywbfKIDrC0nIXqQC3nOrPr9J_QYXvPCjP9Al7bMo9aQjpVpPMUXbDn1iDaopv20cnjFkZvHwNZY6-WRhgrL3KtJXBns4qWGc-oHxWB_2fIC2Dat</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.402716,39.466508,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público Ribalta (Algemesí)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.426874,39.188611,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Rincón de Bonanza (Oriola - Bonanza)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -1.007194,38.080556,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CP Rodolfo Tomás Samper (Elx - L'Altet)]]></name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.534639,38.274217,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Antonio (Elx - La Hoya)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.681752,38.213841,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Bartolomé (Oriola - San Bartolomé)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/MCDiMgoDon1DokbqKFsbX470BUJI_-9VAMtcq-QC9vrn-RAe7pd6YanLXo6Qlql9PLpWYJonk4CGtAbpdTSa0cbIKgmDszQb8MoeCHnrMi4-mA_uwBYqRRA0Sm7x0fATN5ccbKORutsd" height="200" width="auto" /><br><br>Calle de Miguel Delibes, 0, 03314 San Bartolomé, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/MCDiMgoDon1DokbqKFsbX470BUJI_-9VAMtcq-QC9vrn-RAe7pd6YanLXo6Qlql9PLpWYJonk4CGtAbpdTSa0cbIKgmDszQb8MoeCHnrMi4-mA_uwBYqRRA0Sm7x0fATN5ccbKORutsd</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.861556,38.095696,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Colegio Público San Blas (Albal)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.411044,39.396495,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Clemente (Sedaví)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.382674,39.423155,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Fernando (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.683185,38.26747,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Francisco de Asís (Dolores)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.766383,38.138309,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Jaime (Benijòfar)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.737837,38.078028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP  San José de Calasanz (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.703314,38.266374,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San José de Calasanz (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.335551,39.458602,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Juan de Ribera (Alfara del Patriarca)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.38234,39.543818,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Nicolás de Bari (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.485791,38.360747,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Roque (Callosa del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.87767,38.12567,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP San Sebastián (Rocafort)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.409425,39.527306,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Sanchís Guarner (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.709017,38.25665,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Sant Pasqual (Torrent)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.475725,39.428047,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Severi Torres (Villanueva de Castellón)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.515682,39.078536,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Sierra de Mariola (Alacant)</name>
+        <description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/kl3dXFX0F7YTP1W7wtTtt2hV5NgpxUGLfI_MhWxswU-wrnCgMvXsLHQaCZiHjigUxHIbbpLUBlcezFzZgWcfBcUUgR_t8aTrCBqRMUH79ps9tHoQaGEK5V5y-vl83MF25dKay_bI9Wm2" height="200" width="auto" /><br><br>03009 Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh5.googleusercontent.com/proxy/kl3dXFX0F7YTP1W7wtTtt2hV5NgpxUGLfI_MhWxswU-wrnCgMvXsLHQaCZiHjigUxHIbbpLUBlcezFzZgWcfBcUUgR_t8aTrCBqRMUH79ps9tHoQaGEK5V5y-vl83MF25dKay_bI9Wm2</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.502045,38.365972,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Pintor Teodoro Andreu (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.425484,39.154472,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Tirant lo Blanc (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.433364,39.151185,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Valverde Bajo (Elx - Valverde)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.603952,38.226802,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Vicente Blasco Ibáñex (Elx)</name>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/xseDER5uU1RctVbRYr7njexam_bp_l-ouB8KshMLpKOKxXv1hN2vNCoZiSxSeTzFxHPrvqU6MkHDPaUknfQyOs1Pq4SuNeerEr5cYo4Rf63fBDwdWU3gbi42K4E0oZPj4iWpKhDIoRR-" height="200" width="auto" /><br><br>Elche, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/proxy/xseDER5uU1RctVbRYr7njexam_bp_l-ouB8KshMLpKOKxXv1hN2vNCoZiSxSeTzFxHPrvqU6MkHDPaUknfQyOs1Pq4SuNeerEr5cYo4Rf63fBDwdWU3gbi42K4E0oZPj4iWpKhDIoRR-</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.716206,38.276512,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Vicente Blasco Ibáñez (Montesa)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.651031,38.948634,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Vicente Blasco Ibáñez (València)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/5Nbmd1qu90WCikNT5kKV9afQP2c64gAfv4ZFZWAbOWYVY4U8LAh1cFTk2eKROQYI5cchrFUU_1oTRfcMH91s82086jgFk2jvNcvMEDh9_6rbqbFjC3pCBIymzOvHhJSf-kb2vGbi9Too" height="200" width="auto" /><br><br>46005 Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/5Nbmd1qu90WCikNT5kKV9afQP2c64gAfv4ZFZWAbOWYVY4U8LAh1cFTk2eKROQYI5cchrFUU_1oTRfcMH91s82086jgFk2jvNcvMEDh9_6rbqbFjC3pCBIymzOvHhJSf-kb2vGbi9Too</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.36837,39.463674,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Vicente Nicolau Balaguer (Manises)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.461933,39.494929,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Víctor Pradera (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.674933,38.275104,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Villar Palasí (Oriola)</name>
+        <description><![CDATA[<img src="https://lh3.googleusercontent.com/proxy/8NLRFzqPfPX7I5_8D4oyNJWn3nvPmIserLWVWrHnum2yT_u570NzSY55aI0oQkoDh9StaH1-6hTQu49jPtjfQoxvsEfBoTiKXZWTFf_kzHOr4LXTiN8XF42vOhrX4f8vnkWvGKWh_xXD" height="200" width="auto" /><br><br>Orihuela, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh3.googleusercontent.com/proxy/8NLRFzqPfPX7I5_8D4oyNJWn3nvPmIserLWVWrHnum2yT_u570NzSY55aI0oQkoDh9StaH1-6hTQu49jPtjfQoxvsEfBoTiKXZWTFf_kzHOr4LXTiN8XF42vOhrX4f8vnkWvGKWh_xXD</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.938436,38.093492,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Villar Palasí (Sagunt)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.276032,39.685294,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Villar Palasí (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.276031,39.685294,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen de Belén (Jacarilla)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.868901,38.061825,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen de las Virtudes (Cox)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.88382,38.137882,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen de los Desamparados (Oliva)</name>
+        <description><![CDATA[<img src="https://lh5.googleusercontent.com/proxy/MDbttYdXY8eoou6txMCGdFvT5j102Yxv7EJGGHNgMg7l9GCojC7CZJmmduqaj4fyn01ifF-DpL9lQ4E9tinCO4oCNBrzaINFgMzbTa8D7kQJmUlhAt_85Dz2EMFtaSJdkhNDwB4iIWKp" height="200" width="auto" /><br><br>46780 Oliva, Valencia]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh5.googleusercontent.com/proxy/MDbttYdXY8eoou6txMCGdFvT5j102Yxv7EJGGHNgMg7l9GCojC7CZJmmduqaj4fyn01ifF-DpL9lQ4E9tinCO4oCNBrzaINFgMzbTa8D7kQJmUlhAt_85Dz2EMFtaSJdkhNDwB4iIWKp</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.124097,38.923721,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen de los Dolores (Dolores)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.775136,38.13713,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen del Carmen (Cox)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.891664,38.143218,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen del Milagro (Rafelbunyol)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.33453,39.588915,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen del Rosario (Albatera)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.875342,38.183826,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP Virgen del Rosario (Massamagrell)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.335328,39.5712,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CRA Alt Carraixet (Olocau)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.530238,39.700857,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[CRA L'Aiguaneu (Torre d'En Besora)]]></name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            0.02387,40.47148,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Escuela de Arte y Superior y Diseño (Oriola)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.940176,38.089135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Antonio José Cavanilles (Alacant)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.507449,38.339398,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Bernat Guinovart (Alagemesí)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.424704,39.195406,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Campanar (València)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.399122,39.48115,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Camp de Turia (Llíria)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.596172,39.631888,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES José María Parra (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.430043,39.156566,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES La Asunción (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.686742,38.261518,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES La Torreta (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.69216,38.255773,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Las Lagunas (Torrevieja)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.67428,37.99426,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IEs Pedro Ibarra Ruiz (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.683053,38.261832,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Ramón Cid (Benicarló)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            0.414038,40.4119,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Rei En Jaume (Alzira)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.430436,39.146937,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Santiago Grisolía (Callosa del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.868643,38.117104,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Tirant Lo Blanc (Gandia)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.18052,38.978897,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IES Vega Baja (Callosa del Segura)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.877615,38.131459,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>EI Virgen de Monserrate (Oriola)</name>
+        <description><![CDATA[<img src="https://lh6.googleusercontent.com/proxy/CBc0xGOFV7ZnXDt0mYXFdIfT0oE_rtH8hW_Z7lZMfIK7KZbYAb9KQAwBQ4x1-hbNENUZSB52PLkvEq4yLaG8H-PAhYKaFjsep37OKOyi1tdBpJXL2glxiGRYXOQjzwegRZxmb1jpwRpJ" height="200" width="auto" /><br><br>03300 Orihuela, Alicante]]></description>
+        <styleUrl>#icon-22</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://lh6.googleusercontent.com/proxy/CBc0xGOFV7ZnXDt0mYXFdIfT0oE_rtH8hW_Z7lZMfIK7KZbYAb9KQAwBQ4x1-hbNENUZSB52PLkvEq4yLaG8H-PAhYKaFjsep37OKOyi1tdBpJXL2glxiGRYXOQjzwegRZxmb1jpwRpJ</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -0.951922,38.090371,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CP El Palmeral (Elx)</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.686216,38.262513,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
