@@ -1,0 +1,89 @@
+#+LANGUAGE: es
+#+CATEGORY: manual, presentación, congreso, ponencia
+#+TAGS: commandline, línea de comandos, ls, pwd, mkdir, cd, touch, cp, mv, stdin, stdout, stderr, posix, diff, grep, egrep, find, awk, sed
+#+DESCRIPTION: Acometer un proyecto en Medialab-Prado
+#+TITLE: Operaciones lógicas con datos
+#+DATE: <2017-05-06 sáb 10:00>
+#+AUTHOR: Adolfo A. Bravo
+#+EMAIL: adolfo@medialab-prado.es
+#+OPTIONS: todo:nil pri:nil tags:nil ^:nil 
+
+Basado en muchos documentos, horas, pruebas y aciertos previos.
+
+Documento en construcción. Si tienes alguna sugerencia, escribe una issue.
+
+* Historia
+
+** Mayo 2017
+Comienza a tomar forma o al menos se expone de forma pública durante las [[http://s.coop/jpd17][Jornadas de Periodismo de Datos 2017]],
+realizado conjuntamente con [[https://twitter.com/Pilarjlopez][Pilar J. López]] bajo el título de /Operaciones lógicas con datos en la terminal/.
+
+** Julio 2017
+
+En julio forma parte del curso de [[https://www.cfp.upv.es/formacion-permanente/cursos/herramientas-digitales-para-el-periodismo-de-datos_idiomaes-cid53289.html][Herramientas digitales para el periodismo de datos]] de la [[https://www.upv.es/][Universitat
+Politècnica de València]].
+
+** Octubre 2017
+
+El festival Transeuropa se celebró en Medialab-Prado. Fruto de la colaboración con ellxs por la temática
+tratada, informaron del festival durante el simposio de Visualizar'17 y correspondimos con un [[https://transeuropafestival.eu/es/eventos/data-analysis-and-visualisation/][curso de
+introducción al análisis y la visualización de datos]].
+
+
+* Inicios
+
+Han sido muchas las acciones formativas de Medialab-Prado. El [[http://medialab-prado.es/article/periodismo_de_datos_-_grupo_de_trabajo][grupo de periodismo de datos]], liderado por Mar Cabra hasta 2014, ha
+realizado hasta la fecha un gran número de actividades de formación, difusión o talleres de periodismo de
+datos. 
+
+Conozco el grupo de periodismo de datos desde septiembre de 2013, cuando clausuro en Medialab-Prado en
+congreso de /Periodismo y Web Semántica/ que organizo como edición de 2013 del /Encuentro Internacional de
+Investigadorxs en Información y Comunicación/ (EIIIC) para el Departamento de Periodismo III de la Universidad
+Complutense, donde me encontraba realizando mi tesis sobre las /Tecnologías de la Web Semántica/.
+
+Comienzo a colaborar de forma estable con el grupo en diciembre de 2013 y co-organizo con Mar Cabra mi [[http://medialab-prado.es/article/periodismodatos14][primera
+sesión]] centrada en web scraping a cargo de Miguel Fiandor y el trabajo con datos de El Confidencial.
+
+** Periodismo de datos en cinco días
+
+Junto con [[https://twitter.com/#!/antonmileo][Javier Galán]], quien había realizado algún taller en Medialab-Prado y que había creado el
+desaparecido /CEPID/ (Centro Español de Periodismo de Investigación y Datos), ideamos un curso práctico de
+introducción al periodismo de datos en cinco días para el diario Cinco Días... originales que somos.
+
+Este curso lo realizamos también en el Huffington Post y en la [[https://www.u-tad.com/estudios/modulo-de-especializacion-periodismo-de-datos/][U-TAD]], donde nos acompañó también [[https://twitter.com/rafadelascuevas][Rafa de las
+Cuevas]].
+
+**  24 horas con datos
+
+De la evolución del anterior añadimos algunas horas más para crear otro producto de renombre: /24 horas con
+datos/, curso que impartí junto con Javier Galán en la [[http://www.apmadrid.es/abierto-el-plazo-de-inscripcion-del-i-curso-24-horas-de-datos/][Asociación de la Prensa de Madrid]], con este temario:
+
+0. Presentación e Introducción
+1. Scraping: recolección de datos.
+2. Análisis de datos.
+3. Limpieza/curación de datos.
+4. Geodatos, mapas.
+5. Visualización de datos.
+6. Github y publicación web.
+
+A través del curso compartíamos herramientas, trucos y consejos, sobre unos ejemplos dados. Y apuntábamos
+hacia este modelo, pues poníamos el énfasis en aumentar la alfabetización digital y en datos para sacar el
+mejor partido a nuestro entorno de trabajo, el ordenador.
+
+** La introducción
+
+La introducción fue creciendo poco a poco con aportaciones de aquí y de allá, pero sobre todo de 
+
+
+* Estructura del repositorio
+
+Hay tres archivos de texto:
+- El propio =Readme.org=, que sirve de introducción al documento.
+- =index.org=, que sirve de base para la presentación index.html hecha
+  en Reveal, una introducción al contexto histórico, la práctica y
+  algunos ejemplos del periodismo de datos.
+- =operaciones-logicas-datos.org=, que comienza a consolidarse en las
+  Jornadas de Periodismo de Datos 2017 y supone un esfuerzo por
+  compilar y ofrecer, con un caso práctico, el uso de la terminal para
+  realizar operaciones lógicas con datos.
+
