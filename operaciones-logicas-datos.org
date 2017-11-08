@@ -1,0 +1,2657 @@
+#+LANGUAGE: es
+#+CATEGORY: manual, presentación, congreso, ponencia
+#+TAGS: commandline, línea de comandos, ls, pwd, mkdir, cd, touch, cp, mv, stdin, stdout, stderr, posix, diff, grep, egrep, find, awk, sed
+#+DESCRIPTION: Acometer un proyecto en Medialab-Prado
+#+TITLE: Operaciones lógicas con datos
+#+DATE: <2017-05-06 sáb 10:00>
+#+AUTHOR: Adolfo A. Bravo y Pilar J. López
+#+EMAIL: adolfo@medialab-prado.es
+#+OPTIONS: todo:nil pri:nil tags:nil ^:nil 
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:nil
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
+#+REVEAL_POSTAMBLE: <p> Creado por adolflow. </p>
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+
+* Necesidades previas
+- Disponer de un ordenador con sistema operativo sobre el que tengamos
+  permisos de superusuario/administración.
+- Preferiblemente, GNU/Linux. Si no lo tienes, igual es un buen momento para instalártelo.
+- Manejo del entorno de escritorio.
+- Instalación y desinstalación de programas.
+- Resolución de problemas.
+- Conocimiento del árbol de directorios. Rutas y enlaces simbólicos
+- Manejo de versiones de archivos.
+
+* Fundamental
+- Conocimiento de la arquitectura hardware del ordenador.
+- Conocimiento de la estructura del sistema operativo.
+- Uso de la terminal, consola Unix.
+- Manejar la estructura de ficheros.
+- Distinguir entre rutas absolutas y relativas.
+- Nociones de las distintas codificaciones de caracteres.
+- Qué tipos de datos hay
+- Qué tipos de formatos de datos hay.
+- Usuarios y grupos, permisos
+- Espíritu crítico.
+- Ganas de aprender.
+
+* Opcional
+
+- Atajos de teclado.
+- Conocer la Web: navegador, lenguaje HTML, programas, utilidades,
+  atajos, buscadores.
+- Git, git*, 
+- Nociones de periodismo de datos: investigación, datos y
+  visualización.
+
+
+* Programación
+¿De qué hablamos cuando nos referimos lxs periodistas a que no sabemos programar?
+** Lenguajes informáticos
+- Todos [[https://es.wikipedia.org/wiki/Lenguaje_inform%25C3%25A1tico][los lenguajes que utiliza un ordenador]].
+- Lenguajes de programación: Python, R, Haskell, Lisp
+- Lenguajes de especificación, descripción o marcado: HTML, CSS, MD
+- Lenguajes de consulta: SQL, XQuery, SPARQL
+- Lenguajes de transformación: XSLT
+- Lenguajes de sonido
+- Lenguajes gráficos
+- Pseudocódigo
+** Lenguaje de programación
+- Lenguaje formal diseñado para realizar procesos que pueden ser
+  llevados a cabo por máquinas como las computadoras.
+- Controlar el comportamiento físico y lógico de una máquina.
+- Formado por un conjunto de símbolos y reglas sintácticas y
+  semánticas que definen su estructura y el significado de sus
+  elementos y expresiones.
+
+** Estructura
+
+#+BEGIN_EXAMPLE
+Sujeto Predicado Objeto
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+Función Variable Argumento
+#+END_EXAMPLE
+** Sintaxis de los comandos
+*** Ejecución del comando sin más
+Para ejecutar el comando sin más, por ejemplo, =ls=, escríbelo y pulsa
+=Enter= o =retorno de carro=
+
+#+BEGIN_SRC sh :output org
+ls
+
+#+END_SRC
+
+#+RESULTS:
+| alumnxs.org                     |
+| data                            |
+| docs                            |
+| index.html                      |
+| index.html~                     |
+| index.org                       |
+| index.org~                      |
+| #operaciones-logicas-datos.org# |
+| operaciones-logicas-datos.org   |
+| operaciones-logicas-datos.org~  |
+| Readme.org                      |
+| transparencia.org               |
+| transparencia.org~              |
+
+*** Comando más argumentos
+
+En el caso de =ls=, podemos decirle que nos liste un archivo concreto,
+por ejemplo:
+
+#+BEGIN_SRC sh :output org
+ls alumnxs.org
+
+#+END_SRC
+
+#+RESULTS:
+: alumnxs.org
+
+Otros comandos pueden requerir uno o más argumentos.
+
+*** Comando con opciones
+
+- Cada comando tiene múltiples opciones, y se pueden combinar.
+- Las opciones se suelen escribir con una sigla que corresponde con
+  una palabra, separado por un guión.
+- Por ejemplo, si escribimos =ls -r=, listamos el directorio en orden
+  inverso.
+
+#+BEGIN_SRC sh :output org
+ls -r
+
+#+END_SRC
+
+#+RESULTS:
+| transparencia.org~             |
+| transparencia.org              |
+| Readme.org                     |
+| operaciones-logicas-datos.org~ |
+| operaciones-logicas-datos.org  |
+| index.org~                     |
+| index.org                      |
+| index.html~                    |
+| index.html                     |
+| docs                           |
+| data                           |
+| alumnxs.org                    |
+
+Nótese la diferencia con la ejecución anterior.
+
+** Tipos de datos
+- Números enteros o /integers/
+- Decimales, flotantes o /floats/
+- Cadenas -de caracteres- o /strings/
+- Booleanos: verdades o falso
+- Otros objetos
+** Algunos símbolos
+- =\n=, línea nueva
+- =\b=, backspace
+- =\r=, retorno de carro.
+- =\t=, tabulador
+- =\f=, formfeed
+- =\e=, espacio
+- =\\=, barra invertida
+- =\"=, comillas
+- =\000=, carácter octal.
+* Herramientas básicas
+- Navegador: [[https://www.mozilla.org/es-ES/firefox/new/][Firefox]] y [[https://www.google.es/chrome/browser/desktop/index.html][Chrome]], porque cumplen con estándares web.
+- Compresor: [[http://7-zip.org][7-zip]]. Por favor, dejad de usar Winraaaaaaar.
+- Consola: [[https://www.cygwin.com/][Cygwin]], con los paquetes R, Python, Emacs, convert, git,
+  etc.
+- Editor: [[https://blog.infotics.es/2015/11/11/editor-de-textos/][Emacs]], [[https://notepad-plus-plus.org/][Notepad++]], [[https://www.sublimetext.com/][Sublime]], [[https://atom.io/][Atom]]... puedes leer [[https://blog.infotics.es/2015/11/11/editor-de-textos/][cómo elegir un buen editor de textos]].
+** Emacs
+- Se puede [[https://www.gnu.org/software/emacs/download.html][descargar]] y utilizar tanto en Linux, Windows o
+Mac. Podemos descargarlo desde:
+- [[http://ftp.gnu.org/gnu/emacs][ftp de Emacs]]
+- [[https://www.gnu.org/order/ftp.html][elegir un mirror]]
+- dejar que nos sugieran el mirror [[http://ftpmirror.gnu.org/emacs/][más cercano a nuestra ubicación.]]
+
+** Cygwin
+
+Hemos de hacer 3 pasos:
+1. Instalar los paquetes con los que queremos trabajar.
+2. Configurar para que no sea =vi= el editor por defecto.
+3. Cambiar la variable =db_home=
+
+*** Instalar paquetes
+
+- La consola viene con un conjunto de paquetes básicos.
+- Para usar más paquetes, en el momento de la instalación del =setup=,
+  tenemos que elegir los paquetes.
+- Ojo, cuando queramos instalar otro paquete, tendremos que hacer lo
+  mismo, volver a correr =setup=
+- Algunos paquetes para trabajar con datos:
+ - git, para trabajar con git, software de control de versiones.
+ - imagemagick, para manipular imágenes.
+ - emacs, para editor de texto.
+ - python, para trabajar con Python.
+ - R, para trabajar con R.
+ - perl, para trabajar con perl.
+ - ruby, para trabajar con ruby.
+ - tesseract, herramienta de reconocimiento óptico de caracteres
+   (/OCR/), con los paquetes en inglés y español dado que son los
+   idiomas más habituales.
+ - grep, para realizar búsquedas en el texto.
+ - pdfgrep: para realizar búsquedas en texto de pdfs.
+ - sgrep, para realizar búsquedas de texto en documentos SGML, XML o
+   HTML.
+ - gawk, para procesar texto.
+ - sed, para editar flujos de texto.
+ - qpdf, para transformación de PDF
+ - xpdf, para visionar y otras operaciones con pdf
+ - odt2txt, para pasar un odt a txt.
+ - xlsx2csv, para pasar un xlsx a csv.
+ - p7zip, archivar y comprimir datos.
+ - gzip, compresor de datos
+ - unzip, descompresor de datos
+ - zip, compresor de datos
+ - lynx, visor web
+ - links, visor web
+ - curl, transferencia de archivos multiprotocolo
+ - wget, descargar archivos de la web
+ - less, paginador, similar a more
+ - vim, editor de textos
+
+*** Configuración de editor por defecto
+- Cuando editamos un archivo de configuración, por ejemplo de =git=,
+  el programa que utiliza por defecto es =vi=, complicado pero no
+  imposible (manual en [[https://www.cs.colostate.edu/helpdocs/vi.html][inglés]] y [[http://www.dc.fi.udc.es/os/people/afyanez/info-vi/][español]]).
+- Si os mola el rollo =vi=, sería mejor instalar =vim= ([[http://www.vim.org/docs.php][manual]]). 
+- Propongo modificarlo por =emacs=, que además comparte atajos con la
+  terminal. ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][reference card]] y [[https://gist.github.com/dherman/3238368][cheat sheet]]... con [[http://medialab-prado.es/article/organiza-tu-vida-con-emacs-y-org-mode][orgmode]], un plus!)
+
+Para ello, editaremos desde nuestro editor favorito, el archivo
+=.bashrc= del directorio de Cygwin y pondremos:
+
+#+BEGIN_EXAMPLE
+export VISUAL=emacs
+export EDITOR="$VISUAL"
+#+END_EXAMPLE
+
+*** Cambiar la home de Cygwin
+- Por defecto, la home del usuarix de Cygwin es el directorio de
+  instalación del programa.
+- Para disfrutar de Cygwin y acceder a todo el disco, debemos
+  [[http://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation%0A][modificar]] la variable =db_home= en =/etc/nsswitch.conf=
+
+Escribimos:
+#+BEGIN_EXAMPLE
+db_home: windows
+#+END_EXAMPLE
+
+O de forma equivalente:
+
+#+BEGIN_EXAMPLE
+db_home: /%H
+#+END_EXAMPLE
+
+De esta última manera puedes interpretar el esquema y hacer que estén
+dentro del subdirectorio =cygwin=, por ejemplo:
+
+#+BEGIN_EXAMPLE
+db_home: /%H/cygwin
+#+END_EXAMPLE
+
+En esta [[http://stackoverflow.com/questions/225764/safely-change-home-directory][página]] proponen otro método:
+
+#+BEGIN_SRC sh
+mkpasswd -l -p "$(cygpath -H)" > /etc/passwd
+#+END_SRC
+
+
+
+** Markdown
+
+- Es una sintaxis simple heredera de las sintaxis del correo
+  electrónico en modo texto y otras.
+- Lo inventó John Gruber para escribir y leer fácil =HTML=.
+- Además de una sintaxis, es un =parser= o conversor.
+- Algunos enlaces: [[https://github.com/flowsta/markdown][mis apuntes de Markdown]], [[http://docs.podigee.com/guides/markdown-cheatsheet.html][Markdown Cheatsheet]] y [[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf][R
+  Markdown Cheatsheet: R, Markdown y YAML]]
+
+* Línea de comandos
+- La línea de comandos es una interfaz de usuarix basada en líneas de
+comandos (/Command Line Interface/ o /CLI)/.
+- Cuando utilizamos un ordenador, tenemos interfaces para utilizar los
+programas.
+
+** Qué son las Interfaces de usuarix
+
+En la actualidad, cuando utilizamos un ordenador personal --de forma
+general--, usamos interfaces gráficas de usuarix /GUI/ (/Graphic User
+Interface/).
+
+Pero también podemos, de forma general o específica, utilizar otras
+interfaces como son:
+
+- Las referidas /CLI/
+- Las /NUI/ (/Natural User Interface/ o
+interfaz natural de usuarix), como pueden ser las pantallas
+capacitivas multitáctiles, /Kinect/ --con el movimiento-- o /Siri/
+--con el reconocimiento de lenguaje natural-- .
+
+** Historia
+Al inicio de los ordenadores, solo había líneas de comandos para
+comunicarnos con ellos. Bell Telephone lanzó en 1969 /V1/ sobre /UNIX/
+Timeshare System. UNIX tenía la shell /sh/ que era la única
+forma de comunicarse con el ordenador.
+
+Así fue hasta 1973, cuando Las /GUI/ fueron desarrollados en el
+/Centro de Investigación de Xerox en Palo Alto/ (/Palo Alto Research
+Center/, /PARC/).
+
+Tiempo después, /Apple/ pagó para estudiar la idea, que finalmente se
+concreto en su /GUI/.
+
+El MIT desarrolla una GUI para Unix en 1986, X.
+
+El sistema XFree86 de Linux se desarrolló en 1996, una implementación
+libre del original X, al que homenajea en el nombre.
+
+
+** Ventajas de la línea de comandos
+- Ahorras tiempo
+- Te ofrecen una alternativa a las GUI.
+- Te acercan más a cómo funcionan los sistemas POSIX.
+- Funcionas con atajos compartidos.
+- Te preparan para la programación.
+- Aprendes otra forma de hacer las cosas.
+- Te empodera.
+** Conceptos
+- Utilizaremos *un emulador de terminal*, dado que estamos en un
+  entorno gráfico.
+- La terminal es la interfaz más directa con el sistema operativo.
+- Una /shell/ es un intérprete de comandos de la terminal.
+- Un comando u orden es una utilidad que ejecutas en la /shell/.
+- La salida es lo que devueve el comando, normalmente en la terminal,
+  llamada /STDOUT/ por /STandarD OUTput/ o salida estándar.
+- La entrada de datos, argumentos o comandos es lo que se conoce como
+  /STDIN/ por /STandarD INput/.
+- Un proceso es una aplicación que corre (está ejecutada, funciona) en
+  tu ordenador. Puede estar activa o durmiendo.
+** Atajos de consola
+
+
+- =C-l=, limpia la consola, es lo mismo que darle a =clear=
+- =C-a=, ir al inicio de la línea
+- =C-e=, ir al final de línea.
+- =C-u=, limpia la línea desde el inicio de la línea hasta la posición actual.
+- =C-c=, para el proceso.
+- =C-S-c=, copia el texto seleccionado.
+- =C-S-v=, pega el texto seleccionado.
+- =C-z=, para el proceso.
+- =C-d=, en una línea en blanco, es igual que =exit=. Si tiene texto,
+  borra un carácter.
+- =C-k=, borra de la posición del cursor al final de la línea.
+- =C-b=, mueve el cursor un carácter hacia atrás.
+- =M-b=, mueve el cursor una palabra para atrás.
+- =C-f=, mueve el cursor un carácter hacia delante.
+- =M-f=, mueve el cursor una palabra hacia delante.
+- =C-h=, borra la letra antes del cursor.
+- =C-w=, borra la palabra antes del cursor.
+- =C-p=, sube una línea, es decir, ve el último comando realizado.
+- =C-n=, bajar una línea o ir al comando siguiente.
+
+Scrolls through the commands you've entered previously.
+Takes you back to a more recent command.
+Enter When you have the command you want.
+tab A very useful feature. It autocompletes any commands or filenames, if there's only one option, or else gives you a
+list of options.
+Ctrl + R
+Searches for commands you've already typed. When you have entered a very long, complex command and need to
+repeat it, using this key combination and then typing a portion of the command will search through your command
+history. When you find it, simply press Enter.
+The history command shows a very long list of commands that you have typed. Each command is displayed next to
+History
+a number. You can type !x to execute a previously typed command from the list (replace the X with a number). If
+you history output is too long, then use history | less for a scrollable list.
+Example: you ran history and found you want to use command 1967. Simply enter
+!1967
+
+
+** Explorador de archivos
+*** ls
+ Lista los archivos del punto en el que nos encontramos. Viene del
+ inglés /list/. Si lo lanzamos sin argumentos, obtendremos un listado
+ de los archivos y directorios que contiene ese directorio:
+
+#+BEGIN_EXAMPLE
+ls
+#+END_EXAMPLE
+
+ =ls [opciones]= lista los archivos del punto en el que nos encontramos.
+ - =-a=, lista todos los archivos.
+ - =-l=, lista en formato largo
+ Para emplear argumentos, utilizaremos la estructura:
+
+#+BEGIN_EXAMPLE
+ls -a
+#+END_EXAMPLE
+
+ Si queremos saber la información de cada archivo y directorio, lo
+ haremos con la opción =-l=:
+
+#+BEGIN_EXAMPLE
+ls -l
+#+END_EXAMPLE
+
+*** pwd
+
+- =pwd= es el acrónimo de /print working directory/ o /muestra por
+ pantalla el directorio de trabajo actual/.
+- Es decir, imprime la ruta absoluta del sistema donde nos
+  encontramos.
+
+#+BEGIN_EXAMPLE
+pwd
+#+END_EXAMPLE
+
+*** mkdir
+- Para crear un directorio, usamos =mkdir=, /make directory/
+- =mkdir [opciones] [nombre-directorio]=
+
+*** cd
+- Con =cd= cambiamos de directorio
+- Viene de las iniciales del inglés
+ /change directory/.
+- Si escribimos solo =cd=, vamos a nuestro espacio /home/ definido en la
+ variable de entorno =HOME=.
+
+Para cambiar de directorio, podemos elegir la ruta absoluta o la
+relativa.
+
+ #+BEGIN_EXAMPLE
+ cd [ruta]
+ #+END_EXAMPLE
+
+**** Atajos de rutas
+
+- =cd=, vamos a la home del usuario
+- =cd .=, vamos al directorio en el que estamos.
+- =cd ..=, vamos al directorio superior
+- =cd ~=, vamos al directorio home del usuario.
+- =cd -=, vamos al directorio donde estábamos antes.
+
+Con esos atajos también podemos construir rutas, por ejemplo, con =cd
+ ~/Documentos= vamos al directorio Documentos del usuario con el que
+ estamos (en un ordenador con GNU/Linux)
+
+ =cd [ruta]=, /change directory/, cambia al directorio elegido. Podemos escribir la ruta absoluta o bien con atajos:
+ - =cd=, vamos a la home del usuario
+ - =cd .=, vamos al directorio en el que estamos.
+ - =cd ..=, vamos al directorio superior
+ - =cd ~=, vamos al directorio home del usuario.
+ Con esos atajos también podemos construir rutas, por ejemplo, con =cd ~/Documentos= vamos al directorio Documentos del usuario con el que estamos.
+
+*** env
+- Podemos saber las variables que manejamos con el comando =env=
+- Si dirigimos la salida al filtrado con =grep= de la palabra =HOME= o =home=
+
+Luego explicaremos lo que hacemos aquí:
+
+#+BEGIN_EXAMPLE
+env | grep HOME
+#+END_EXAMPLE
+*** touch
+Con =touch [archivo]=, creamos archivo vacío, lo mismo que con =mkdir= creamos un directorio.
+
+*** cp
+Con =cp= copiamos archivos y/o directorios.
+
+#+BEGIN_EXAMPLE
+cp [opciones] [origen] [destino]
+#+END_EXAMPLE
+
+- Con =cp -r= copia los directorios recursivamente
+- Si queremos copiar varios archivos/directorios en un directorio, el
+  último que ponemos es el destino.
+
+*** mv
+Con =mv= un archivo o directorio completo. También sirve para
+renombrar, aunque para esto tenemos a =rename=.
+
+#+BEGIN_EXAMPLE
+mv [origen] [destino]
+#+END_EXAMPLE
+
+** Entrada Salida I/O, control del flujo
+  
+#+CAPTION: Diagrama de funcionamiento de STDIN, STDOUT y STERR. Fuente: Wikipedia: Esquema de POSIX y C de entrada estándar. Licencia Dominio Público.
+#+ATTR_HTML: alt Diagrama de funcionamiento de STDIN, STDOUT y STERR. Fuente: Wikipedia: Esquema de POSIX y C de entrada estándar. Licencia Dominio Público
+https://upload.wikimedia.org/wikipedia/commons/7/70/Stdstreams-notitle.svg
+
+*** POSIX
+
+Para saber de los procesos de entrada y salida de datos, conviene
+saber de POSIX. ¿Qué es POSIX? Es lo que hace diferente Unix de
+Windows, es lo que te complica o te facilita la vida si quieres una
+compatibilidad en las operaciones que puedes hacer a nivel de sistema
+operativo.
+
+*** Qué es POSIX
+
+[[https://es.wikipedia.org/wiki/POSIX][POSIX]] es el acrónimo de /Portable Operating System Interface/
+(Interfaz de Sistema Operativo Portable), y la /X/ viene de UNIX como
+seña de identidad de la API.
+
+Como anécdota, decir que [[https://stallman.org/articles/posix.html][el nombre fue sugerido por Richard Stallman]],
+fundador del proyecto [[https://www.gnu.org/][GNU]], cuando en 1980 pertenecía al comité del
+[[https://www.ieee.org/index.html][IEEE]] (/Institute of Electrical and Electronics Engineers/, Instituto
+de Ingenierxs Electrónicxs y Eléctricxs) que desarrolló el protocolo
+finalmente conocido como /POSIX/.
+
+*** Estándares
+
+Se trata de una [[https://en.wikipedia.org/wiki/POSIX][familia de estándares]] que pretenden mantener la
+compatibilidad entre sistemas operativos. /POSIX/ define la /API/, así
+como la línea de comandos y otras interfaces necesarias.
+
+*** 3 archivos
+
+Cada proceso en estos entornos suele disponer de tres archivos
+abiertos al comienzo de su ejecución:
+
+1. La entrada
+2. La salida
+3. La salida de errores.
+
+*** Descriptores de archivos
+El hecho de ser estándares es porque suelen estar asignados a
+descriptores de archivos conocidos, de manera que un programa:
+
+- Siempre tomará los datos de entrada por el descriptor cero 0.
+- Enviará los resultados por el descriptor uno 1.
+- Mostrará los errores por el descriptor dos 2.
+
+*** STDIN, STDOUT, STDERR
+
+Para referirnos a ellos, se les denomina:
+1. La entrada, /STDIN/ (/STanDard INput/, entrada estándar).
+2. La salida, /STDOUT/ (/STanDard OUTput/, salida estándar).
+3. La salida de errores, /STDERR/ (/STanDard ERRor/, salida estándar
+    de errores).
+
+*** La terminal
+Esta convención no tiene mucho sentido en sistemas gráficos o en
+programas que funcionan con demonios, pero alcanzan todo su potencial
+con la terminal.
+
+La terminal o emulador de terminal es el programa que nos conecta con
+la /shell/ del sistema, el intérprete de comandos del sistema operativo.
+
+*** Entrada y salida de datos
+
+- La entrada de datos suele ser el teclado
+- La salida típica suele ser la pantalla
+- La salida de errores suele suplir a la salida típica, en caso de que
+   se produzcan errores en la ejecución del comando.
+
+*** Modificación de los procesos
+
+Estos procesos se pueden modificar:
+- Podemos redirigir la salida a un archivo.
+- O bien dirigir la entrada a un comando.
+- O redirigir una salida a una entrada.
+
+*** Redirección de =STDOUT= y =STDERR=
+Quienes trabajáis habitualmente con Github, quizás os suene cuando
+creáis un repositorio nuevo que entre las opciones para hacerlo, dice:
+
+ #+BEGIN_EXAMPLE
+...or create a new repository on the command line
+echo "# prueba-borrar" >> README.md
+#+END_EXAMPLE
+
+Lo que aquí proponen es utilizar el comando =echo=, que como su nombre
+indica nos devuelve lo que le digamos, y dirigir la salida a un
+archivo.
+
+**** echo
+
+Si escribimos =echo hola=, la salida del comando por la salida típica,
+que es la pantalla, será =hola=:
+
+#+BEGIN_EXAMPLE
+echo "hola"
+
+#+END_EXAMPLE
+
+**** echo y STDOUT a un archivo
+
+ Com proponían en Github, si le decimos a =echo= que devuelva =hola=
+ pero queremos incluirlo en un archivo de nombre =README.md=, haremos:
+
+#+BEGIN_EXAMPLE
+echo hola > README.md
+#+END_EXAMPLE
+
+**** STDOUT a un archivo
+
+Como escribíamos en el ejemplo anterior, el carácter =>= redirecciona
+la salida típica o =STDOUT= al archivo =README.md=.
+
+¿Lo crea? ¿Lo destruye?
+
+- Si no existía ese archivo, efectivamente, lo crea con =hola= como
+contenido.
+- Si existía, lo sobreescribe con =hola= como contenido.
+
+**** STDOUT a un archivo sin sobreescritura
+
+Si no queremos sobreescribirlo, porque ya existía, sino añadir
+contenido a ese archivo, en vez de =>= utilizaremos =>>=:
+
+Como ya he creado con el ejemplo anterior el archivo =README.md= con
+el contenido =hola=, ahora voy a añadir =¿qué tal=:
+
+#+BEGIN_EXAMPLE
+echo qué tal >> README.md
+#+END_EXAMPLE
+
+Para comprobarlo, hacemos un =more=:
+
+#+BEGIN_EXAMPLE
+more README.md
+#+END_EXAMPLE
+
+**** Atención
+
+Aunque aquí no hemos usado comillas, es recomendable introducir el
+texto entre comillas, así nos evitamos que haya palabras reservadas
+que empleemos en la frase:
+
+#+BEGIN_EXAMPLE
+echo "pues muy bien, gracias" >> README.md
+#+END_EXAMPLE
+
+Así añadiremos una tercera línea a =README.md= con ese texto.
+
+**** Repaso de STDOUT
+En [[http://www.tldp.org/LDP/abs/html/io-redirection.html][io-redirection]], hacen un buen repaso:
+
+Redirección de =STDOUT= a =archivo=, donde lo crea o lo sobreescribe:
+
+#+BEGIN_EXAMPLE
+comando 1> archivo
+#+END_EXAMPLE
+
+Redirección y añadido de =STDOUT= a =archivo=:
+#+BEGIN_EXAMPLE
+comando 1>> archivo
+#+END_EXAMPLE
+
+**** Repaso de STDERR
+
+Redirección de =STDERR= a =archivo=:
+#+BEGIN_EXAMPLE
+comando 2> archivo
+#+END_EXAMPLE
+
+Redirección de =STDERR= y se añade al final del =archivo=:
+#+BEGIN_EXAMPLE
+comando 2>> archivo
+#+END_EXAMPLE
+
+Redirección de =STDOUT= y =STDERR= a =archivo=:
+
+#+BEGIN_EXAMPLE
+comando &> archivo
+#+END_EXAMPLE
+
+*** Redirección de =STDIN=
+
+En sentido contrario a =STDOUT=, podemos hacer que un comando ejecute
+un archivo ya creado:
+
+#+BEGIN_EXAMPLE
+comando < archivo
+#+END_EXAMPLE
+
+*** Redirección =STDOUT= a un comando
+Para redirigir un comando con otro utilizamos el carácter de barra vertical =|= que representa la tubería: entubar/dirigir un comando a otros.
+
+#+BEGIN_EXAMPLE
+comando1 | comando2 | comando3
+#+END_EXAMPLE
+
+** Comodines
+Los comodines permiten usar valores conocidos con valores
+comodín.
+
+Hay tres operadores:
+- =*=, para cualquier número de caracteres.
+- =?=, para un carácter.
+- =[x-y]=, para un rango.
+
+*** =*=
+
+Podemos listar todos los =csv= con el comodín =*=, ya que puede haber
+archivos con un carácter o varios.
+
+#+BEGIN_EXAMPLE
+ ls *.csv
+#+END_EXAMPLE
+
+De esta manera listaremos todos los archivos =csv=, pero también #+BEGIN_SRC sh :output org
+ ls *.csv
+
+ #+END_SRC
+
+ #+RESULTS:
+ | black_corrupcion.csv      |
+ | black-is-black_backup.csv |
+ | black-is-black.csv        |
+
+*** =?=
+
+ El comodín =?= sirve para solo un carácter, cualesquiera. Por ejemplo,
+ si tuviéramos archivos que solo difieren en un carácter, podemos
+ listar ambos.
+
+ Imaginemos que tenemos archivos =1.pdf=, =2.pdf=, =3.pdf=,
+ etc. Podríamos listarlos con el comodín =?=:
+
+ #+BEGIN_EXAMPLE
+ ls ?.pdf
+ #+END_EXAMPLE
+
+*** =[]=
+
+ El comodín corchetes cuadrados o =[]= permite buscar rangos de números
+ o letras.
+
+ si queremos buscar en el =csv= tanto =CLESA= como =BLESA=, podemos
+ escribir:
+
+ #+BEGIN_SRC sh :output org
+ grep [B-C]LESA black-is-black.csv | wc -l
+
+ #+END_SRC
+
+ #+RESULTS:
+ : 1650
+
+* Procesos
+
+- =top=, sirve para ver qué procesos consumen más.
+- =ps [comando]= informa de los procesos de ese comando.
+ - =ps -f=, lista completa
+ - =ps -e=, muestra todos los procesos
+ - =ps aux | grep [comando]=, muestra los procesos de ese comando
+- =comando &=, corre proceso por detrás, en el /background/.
+- =jobs=, muestra procesos que corren por detrás
+- =kill señal numero-proceso=, manda la señal determinada a ese proceso
+- =killall comando=, mata todos los procesos de ese comando
+
+* Permisos
+- Los archivos/directorios pertenecen al usuario, del grupo y de otros
+- Las opciones de cada cual son lectura =r= /read/, escritura =w= /write/ y ejecución =x= /execute/
+- =u=, por /user/, usuario
+- =g=, por /group/, grupo
+- =o=, por /others/, otros
+- =a=, por /all/, todos
+** chmod
+
+Literalmente, /change mode/ (cambia el modo) para un archivo o
+directorio. La estructura es =chmod [opciones] [modo] [destino]=
+
+*** Establecer permisos
+
+Si queremos poner un tipo de permisos, podemos hacerlo con el operador ===
+#+BEGIN_EXAMPLE
+chmod a=rx *
+#+END_EXAMPLE
+
+De esta forma pondremos permisos de escritura y ejecución para todos,
+y quitaremos los de escritura si los tenía, a todos los archivos y
+directorios del directorio.
+
+*** Dar permisos
+
+Para dar permisos de escritura y ejecución a todos los archivos y
+subdirectorios por debajo de ese directorio:
+#+BEGIN_EXAMPLE
+chmod +rx *
+#+END_EXAMPLE
+
+*** Quitar permisos
+Si con =+= damos permisos, con =-= quitamos:
+#+BEGIN_EXAMPLE
+chmod g-w .
+#+END_EXAMPLE
+Quita los permisos de escritura al grupo en el directorio en el que
+nos encontramos.
+
+*** Otra forma de establecer permisos
+
+Otra forma de otorgar permisos es con la relación numérica. Dado que
+tenemos tres tipos de usuarios y tres tipos de permisos, se puede
+crear una matriz con los permisos:
+
+#+BEGIN_EXAMPLE
+
+rwx rwx rwx = 111 111 111
+rw- rw- rw- = 110 110 110
+rwx --- --- = 111 000 000
+
+#+END_EXAMPLE
+
+Lo que significa:
+
+#+BEGIN_EXAMPLE
+rwx = 111 en binario = 7
+rw- = 110 en binario = 6
+r-x = 101 en binario = 5
+r-- = 100 en binario = 4
+
+#+END_EXAMPLE
+
+Por tanto, el valor se corresponde con:
+
+#+BEGIN_EXAMPLE
+rwx rwx rwx = 321 321 321
+rw- rw- rw- = 320 320 320
+rwx --- --- = 321 000 000
+#+END_EXAMPLE
+
+Así, si quisieramos dar todos los permisos al archivo =hola.txt=, haríamos:
+#+BEGIN_SRC 
+chmod 777 hola.txt
+#+END_SRC
+
+* Configuración de la terminal
+En la propia terminal tienes opciones de perfiles de color que puedes
+usar o variables:
+
+** Variables de entorno
+Especifica las variables que se exportan a todos los procesos que son
+reproducidos por el /shell/.
+
+Se utiliza el comando =export= para exportar una variable:
+
+#+BEGIN_EXAMPLE
+export VARIABLE=value
+
+#+END_EXAMPLE
+
+Para comprobar las variables, lanzaremos el comando =env=:
+
+#+BEGIN_EXAMPLE
+env
+
+#+END_EXAMPLE
+
+** Aspecto de bash
+
+Si quieres cambiar el aspecto del bash y que no aparezca todo el
+chorro de carpetas en las que te encuentras y que convierte tu línea
+en algo difícil de utilizar, cámbialo:
+
+#+BEGIN_EXAMPLE
+#PS1='[\u@\h \W]\$ '  # Default
+PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
+
+#+END_EXAMPLE
+
+Ahí elegimos, en el primer subcorchete, el color (ver la [[https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash][lista de
+colores completa]]), como por ejemplo =\e[1;31m=, color rojo y en
+negrita o =bldred=.
+
+El primer número se refiere a que sea texto normal, en cursiva, en negrita o subrayado.
+
+- 1, para que aparezca en negrita
+- 2, aparece normal
+- 3, aparece en cursiva
+- 4, para que aparezca subrayado
+
+Si queremos probarlo en la terminal, podemos utilizar el comando =echo=:
+
+#+BEGIN_EXAMPLE
+echo -e "${txtblu}test"
+
+#+END_EXAMPLE
+*** Cómo escapar caracteres en /prompt/
+
+Se puede ver el [[https://wiki.archlinux.org/index.php/Color_Bash_Prompt#Prompt_escapes][listado de caracteres que escapan]].
+
+En este caso, en el segundo subcorchete definimos:
+
+- Con =\u=, que aparecerá el nombre del usuarix.
+- Con =@= que aparecerá una arroba
+- Con =\h= que aparecerá el nombre del host.
+- =\W= indica que se pondrá el directorio de trabajo relativo o /current relative path/, si no estás en =~/=. Si quisiéramos la ruta absoluta emplearíamos =\w=
+
+** Autocompletado 
+Probablemente tengamos activada en la terminal la opción autocompletado, que podemos ver con estas líneas o parecidas en el archivo =.bashrc=:
+
+#+BEGIN_EXAMPLE
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+#+END_EXAMPLE
+
+Por tanto, podríamos pulsar dos veces el tabulador cuando empecemos a escribir un comando y la terminal autocompletará.
+
+* Comandos y ayuda
+La estructura al ejecutar en la mando siempre es la misma:
+
+#+BEGIN_EXAMPLE
+nombre-de-comando opciones argumentos
+#+END_EXAMPLE
+
+Si queremos saber qué hace un comando, hay tres opciones, dos comandos
+que aportan información sobre los otros comandos y una opción de cada
+comando: =whatis=, =--help= y =man=.
+
+** Whatis
+
+=whatis= muestra un par de líneas a lo sumo sobre el comando, de la
+información que aparece en el manual.
+
+Por ejemplo, si queremos saber qué hace el comando =wc=, haremos
+=whatis wc=:
+
+#+BEGIN_EXAMPLE
+whatis wc
+#+END_EXAMPLE
+
+La ayuda suele estar en inglés.
+
+** Help
+
+Sobre cualquier comando, con la opción =--help= nos muestra una versión reducida del manual:
+
+#+BEGIN_EXAMPLE
+wc --help
+#+END_EXAMPLE
+
+** Man
+
+El comando =man= con el nombre del comando como argumento del que se
+quiere saber nos abre el paginador del manual del comando, normalmente
+el comando =more=.
+
+Para avanzar en el paginador, hay que darle a la barra espaciadora y
+para salir del paginador sin llegar al final, hay que pulsar la tecla
+=q=.
+
+Si quieres ver el manual de =wc=, escribirimos:
+
+#+BEGIN_EXAMPLE
+man wc
+#+END_EXAMPLE
+
+* Algunas utilidades
+
+** Interrumpir un comando
+Para interrrumpir el curso de un comando, se puede pulsar a la vez las
+teclas de =Ctrl= y =c=.
+#+BEGIN_EXAMPLE
+Ctrl + c
+#+END_EXAMPLE
+
+#+BEGIN_QUOTE
+Para que esto no suponga un lío, lo habitual es presionar primero la
+letra =Ctrl= y, sin soltarla, pulsar =c= una vez. Luego soltar en
+orden inverso, primero la =c= y luego =Ctrl=.
+#+END_QUOTE
+
+** Limpiar la línea
+Para limpiar la línea con algo que hemos escrito y podríamos borrar
+con la tecla de =Backspace=, podríamos pulsar la combinación de teclas
+=Ctrl= + =u=.
+
+#+BEGIN_EXAMPLE
+Ctrl + u
+#+END_EXAMPLE
+** Salir de la terminal
+Se puede salir de la sesión con el comando =exit= o con la combinación
+de teclas =Ctrl= más =d=.
+
+** Screen
+Con el comando =screen= podemos abrir una terminal virtual dentro de
+la sesión, de tal forma que podemos ejecutar comandos en segundo plan
+o, como por ejemplo un =ping=, una descarga de un fichero con =curl=
+(ver más adelante) o
+cualquier otra orden o conjunto de órdenes. 
+
+Para lanzarlo, escribimos =screen= y entonces pide que continuemos con
+=space= o salgamos con =return=. 
+
+Una vez que hemos continuado con =space=, podemos lanzar el comando
+que queramos tener en segundo plano, como por ejemplo, =ping=. Para
+dejarlo en segundo plano, se teclea =Ctrl= + =a= + =d=.
+
+#+BEGIN_EXAMPLE
+Ctrl + a + d
+#+END_EXAMPLE
+
+Si queremos saber los comandos que tenemos en segundo plano, se pueden
+ver con =screen -ls=.
+
+Si solo tenemos un screen lanzado, podremos volver con =screen -r=,
+pero si tenemos varios, que se mostrarán con =screen -ls=, podremos
+volver al que nos interese con =screen -r= más el número que nos
+aparece en el listado.
+
+Para cerrar la terminal virtual se utiliza también el comando =exit=.
+
+** Aliases
+Se pueden hacer alias de los comandos e incluirlos en =.bashrc=. Por ejemplo:
+
+Un alias de =ls= para que siempre que lo invoquemos haga =ls -aF --color=:
+
+#+BEGIN_EXAMPLE
+alias ls='ls -aF --color=always'
+#+END_EXAMPLE
+
+O un comando nuevo, por ejemplo =ll=, que lanza =ls -l=:
+
+#+BEGIN_EXAMPLE
+alias ll='ls -l'
+#+END_EXAMPLE
+
+Podemos renombrar un comando, como por ejemplo que =grep= sea =search=:
+
+#+BEGIN_EXAMPLE
+alias search=grep
+#+END_EXAMPLE
+
+O que al escribir =..= subamos un directorio con =cd ../=:
+
+#+BEGIN_EXAMPLE
+alias ..='cd ../'
+#+END_EXAMPLE
+
+* Utilidades
+** history
+- =history= muestra los comandos usados.
+- Esta lista se encuentra en el archivo (oculto) =.bash_history=
+- =history -c= limpia la historia
+- =history |grep [comando]=, muestra la historia de ese comando
+- Si la línea 2001 es la del comando que queremos utilizar, podemos
+  escribir =!2001=
+
+*** Búsqueda recursiva
+- Podemos utilizar uno de los comandos anteriores haciendo una
+  búsqueda recursiva con =CTRL + r=
+- Inmediatamente después ponemos el comando que queramos utilizar.
+- La primera opción será la última que utilizamos con ese comando o
+  más bien con esa /cadena de caracteres/ en la ejecución de cualquier
+  comando.
+- Es decir, la búsqueda no solo la hace sobre el comando utilizado
+  sino también sobre cualquier texto de =.bash_history=.
+- Si la primera búsqueda no nos gusta, podemos seguir escribiendo para
+  ser más concretos.
+- Si eso no nos devuelve lo deseado, también podemos volver a teclear
+  =CTRL + r= para ir hacia las búsquedas similares que hubo más atrás.
+** time
+=time [comando]=, muestra el tiempo de ejecución del comando, es
+decir, el tiempo que tarda en ejecutarse.
+** diff
+=diff= compara archivos línea por línea.
+* Explorar el archivo
+** wc
+Lo primero que nos podemos preguntar cuando nos enfrentamos a un
+archivo es saber cuánto pesa, cuántas palabras tiene y, si se trata de
+un =CSV=, cuántas líneas tiene.
+
+Para ello utilizamos =wc=, que responde a /word count/, contar
+palabras, y es de mucha utilidad tanto por separado como en
+combinación con otros comandos.
+
+El esquema de uso sería:
+#+BEGIN_EXAMPLE
+wc [opciones] archivo
+#+END_EXAMPLE
+*** Opciones
+Algunas opciones son:
+- =-l=, cuenta líneas
+- =-c=, cuenta bytes
+- =-m=, cuenta carácteres
+- =-w=, cuenta palabras
+
+*** Ejemplo
+
+¿Cuántas líneas, palabras y bytes tiene el archivo =155-colegios-publicos-valencia-amianto.csv=
+#+BEGIN_EXAMPLE
+wc data/155-colegios-publicos-valencia-amianto.csv
+#+END_EXAMPLE
+
+Lo cual nos da las líneas, palabras y bytes que tiene:
+
+#+BEGIN_EXAMPLE
+156  764 5253 
+#+END_EXAMPLE
+
+*** Contar el número de líneas de un archivo
+Si queremos contar solo las líneas, lo haremos con la opción =-l=:
+
+#+BEGIN_EXAMPLE
+wc -l data/155-colegios-publicos-valencia-amianto.csv
+#+END_EXAMPLE
+
+Lo cual como resultado, =156=.
+
+*** Contar el número de palabras
+
+Lo mismo haríamos con las palabras pero esta vez con la opción =-w= en
+vez de =-l=:
+
+#+BEGIN_EXAMPLE
+wc -w data/155-colegios-publicos-valencia-amianto.csv
+#+END_EXAMPLE
+
+Con lo que obtenemos =764=
+*** Contar el número de caracteres
+
+Cuando queremos saber el número de caracteres, la opción es =-m=
+
+#+BEGIN_EXAMPLE
+wc -m data/155-colegios-publicos-valencia-amianto.csv
+#+END_EXAMPLE
+
+=5119= caracteres en total, un número lígeramente inferior a los
+=5253= bytes que tiene el archivo.
+*** Contar líneas
+ Si queremos contar solo las líneas, lo haremos con la opción =-l=:
+
+ #+BEGIN_SRC sh
+wc -l rera_aragon.csv
+
+ #+END_SRC
+
+*** Saber el tamaño (contar los bytes)
+
+ #+BEGIN_SRC sh
+wc -c rera_aragon.csv
+
+ #+END_SRC
+
+*** Contar las palabras
+
+ #+BEGIN_SRC sh
+wc -w rera_aragon.csv
+
+ #+END_SRC
+
+*** Contar número de caracteres
+
+
+ #+BEGIN_SRC sh
+wc -m rera_aragon.csv
+
+ #+END_SRC
+
+
+** du
+El número de bytes está bien saberlo, pero igual queremos una lectura
+a la que estemos más acostumbradxs, como por ejemplo, en =Kilobytes= o
+=Megabytes=.
+
+Para ello podemos utilizar =du=, que resume el espacio en disco de un
+archivo, directorio o conjunto de directorios.
+
+Para obtener esos datos en un formato de lectura comprensible,
+utilizamos la opción =-h=
+
+Otra opción interesante es =-s=, que hace un resumen.
+
+Así, si queremos saber cuánto pesa el directorio en el que nos
+encontramos, escribiremos:
+
+#+BEGIN_EXAMPLE
+du -sh .
+#+END_EXAMPLE
+
+** head
+
+Ahora que ya sabemos cuánto pesa y qué caracteres o palabras tiene el
+archivo, igual nos interesa echar un vistazo al archivo.
+
+Esto lo podemos hacer con varios comandos. Uno de ellos es =head=, que
+muestra las diez primeras líneas de un archivo.
+
+#+BEGIN_SRC shell :results orgmode
+head data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+| Colegios                                                | Localidad |
+| CP Concepción Arenal (Villareal)                        |           |
+| CEIP Els Garrofers (Elx)                                |           |
+| Colegio Público Hispanidad (Elx)                        |           |
+| Colegio Público Nuestra Señora De La Asunción (Vinaròs) |           |
+| Colegio Público Sanchís Guarner (Ondara)                |           |
+| Colegio Público Virgen de la Asunción (Elx)             |           |
+| CPFA (antiguo CP El Serafico, Elda)                     |           |
+| CIPFP Faitanar (Quart de Poblet)                        |           |
+| CIPFP La Costera (Xàtiva)                               |           |
+
+Ahí vemos:
+- Que la primera línea es la cabecera de la tabla
+- Que tiene dos columnas
+- Aunque parece que la segunda está vacía, luego puede significar que
+  no se han pasado los datos que correspondían a esa columna.
+
+*** head con otro número de líneas
+Si queremos un número de líneas distintas, tan solo tenemos que
+ponerlo como opción antes del argumento del comando.
+
+Por ejemplo, si solo queremos 4 líneas:
+
+#+BEGIN_SRC sh
+head -4 data/155.csv
+#+END_SRC
+
+#+RESULTS:
+| Colegios                         | Localidad |
+| CP Concepción Arenal (Villareal) |           |
+| CEIP Els Garrofers (Elx)         |           |
+| Colegio Público Hispanidad (Elx) |           |
+
+** tail
+
+Si =head= nos muestra las primeras líneas de un archivo, el
+comando =tail= muestra las últimas.
+
+#+BEGIN_SRC shell :results orgmode
+tail data/155.csv
+#+END_SRC
+
+#+RESULTS:
+| IES La Torreta (Elx)                       |   |
+| IES Las Lagunas (Torrevieja)               |   |
+| IEs Pedro Ibarra Ruiz (Elx)                |   |
+| IES Ramón Cid (Benicarló)                  |   |
+| IES Rei En Jaume (Alzira)                  |   |
+| IES Santiago Grisolía (Callosa del Segura) |   |
+| IES Tirant Lo Blanc (Gandia)               |   |
+| IES Vega Baja (Callosa del Segura)         |   |
+| EI Virgen de Monserrate (Oriola)           |   |
+| CP El Palmeral (Elx)                       |   |
+
+*** tail modificar nº%% líneas
+Y también podemos modificar el número de líneas que salen
+especificándolo antes del argumento con la opción =-n= o directamente
+con el número de líneas como opción:
+
+Por ejemplo, si queremos las dos últimas líneas:
+
+#+BEGIN_SRC shell :results csv
+tail -2 data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+| EI Virgen de Monserrate (Oriola) |   |
+| CP El Palmeral (Elx)             |   |
+
+#+BEGIN_SRC shell :results csv
+tail -n2 data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+| EI Virgen de Monserrate (Oriola) |   |
+| CP El Palmeral (Elx)             |   |
+
+** cat
+
+Podemos ver todo el archivo con =cat=, que es un comando que sirve
+para concatenar archivos y que veremos luego, pero que de forma simple
+nos muestra por la salida estándar todo el archivo.
+
+Si es muy largo, no vamos a ver más que las últimas líneas, las que
+quepan en la pantalla, ya que no se va a detener hasta el final.
+
+#+BEGIN_EXAMPLE
+cat data/155.csv
+#+END_EXAMPLE
+
+Por eso se suelen utilizar paginadores, que son como lectores para
+documentos de texto. Los más empleados son =more= y =less=.
+
+** more
+
+- Con more vemos un archivo de texto paginado.
+- Podemos hacer búsquedas.
+- Cuando queramos parar, podemos pulsar =q=.
+** head y tail
+
+Vistos estos dos comandos, =head= y =tail=, se pueden combinar para
+que la salida de uno sirva como entrada de otro, y de esta manera,
+saber qué contiene una línea en concreto.
+
+La concatenación de comandos lo hacemos con la tubería =|=. La tubería
+o /pipe/ sirve para pasar la ejecución de un comando a otro.
+*** Línea nº 30
+Si quisiéramos saber el contenido de la línea número treinta del
+fichero, mostraríamos las 30 primeras líneas con =head -30= y lo
+concatenaríamos con =tail -1= para saber la última de esas 30 primeras
+líneas:
+
+#+BEGIN_SRC sh :results html
+head -30 data/155.csv | tail -1
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+CP Ciudad Artista Fallero (València),
+#+END_EXPORT
+
+De esta manera podemos acceder, por ejemplo, a las filas 30 a 40:
+
+#+BEGIN_SRC sh :results html
+head -40 data/155.csv | tail -10
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+CP Cristóbal Colón (Sax),
+CP Dama d'Elx (Elx),
+CP Doctor López Rosat (València),
+Colegio Público de Educación Especial Tamarit (Elx),
+CP El Barranquet (Godella),
+CP El Moralet (Alacant),
+Colegio Público El Toscar (Elx),
+CP Emilio Valera (Alacant),
+CP Evaristo Calatayud (Montserrat),
+CP Félix Rodríguez de la Fuente (Manises),
+#+END_EXPORT
+
+* grep
+Son un conjunto de comandos que buscan patrones en el texto de los archivos: =grep=,
+=egrep=, =fgrep=, =rgrep=.
+
+El comando =grep= responde a /global regular expresion print/, es
+decir, imprime el resultado de una expresión regular global. Sirve
+para buscar archivos que respondan a la cadena o =string= que
+aportemos.
+
+Empieza por la primera línea del archivo, donde =grep= copia una línea
+en un buffer, lo compara contra la cadena de búsqueda y si la
+comparación pasa, imprime la línea en pantalla.
+
+=grep= repetirá este proceso hasta que el archivo recorra todas las
+líneas.
+
+Nótese que en este proces, =grep= no almacena ni cambia las líneas ni
+tampoco busca una sola parte de la línea.
+Por ejemplo, si queremos buscar =Elx=, que hemos visto que es una
+localidad que aparece en el conjutno de datos que estamos explorando,
+lo haremos con el texto entre comillas, y nos mostrará los resultados:
+#+BEGIN_SRC sh
+grep "Oriola" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+| CP Fernando de Loaces (Oriola)                    |   |
+| CP Maestro Ismael García (Oriola, La Murada)      |   |
+| CP Nuestra Señora de Monserrate (Oriola - Molins) |   |
+| CP Rincón de Bonanza (Oriola - Bonanza)           |   |
+| CP San Bartolomé (Oriola - San Bartolomé)         |   |
+| CP Villar Palasí (Oriola)                         |   |
+| Escuela de Arte y Superior y Diseño (Oriola)      |   |
+| EI Virgen de Monserrate (Oriola)                  |   |
+
+#+BEGIN_QUOTE
+No tenemos que ponerlo entre comillas pero así nos aseguramos que lo
+lea mejor
+#+END_QUOTE
+
+** Búsqueda con regexp
+
+Si nos interesaran los números que aparecen en estos datos, podríamos
+hacer una búsqueda de cuántas líneas contienen números:
+
+#+BEGIN_SRC sh
+grep [0-9] data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: CP Nº 54 (Alacant)
+
+** Contar los resultados de la búsqueda con grep
+Para contar esos resultados, le añadimos la opción =-c=
+
+#+BEGIN_SRC sh
+grep -c "Elx" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+: 38
+
+** Número de línea
+Si queremos que salga el número de línea donde aparece la expresión
+buscada, podemos hacerlo con la opción =-n=:
+
+#+BEGIN_SRC sh
+grep -n "Santa Pola" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+: 20:Colegio Público Azorín (Santa Pola)
+
+** Opciones de búsqueda con OR
+
+Para dar opciones de búsqueda, operador lógico =OR=, caben varias
+opciones a utilizar:
+
+- El operador lógico =\|=
+- Utilizar la combinación =|= pero con la opción =-E=
+- =egrep=
+- =grep= con =-e= y =-e=
+
+*** OR con \|
+
+#+BEGIN_SRC sh
+grep "Santa Pola\|Oriola" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+| Colegio Público Azorín (Santa Pola)               |   |
+| CP Fernando de Loaces (Oriola)                    |   |
+| CP Maestro Ismael García (Oriola, La Murada)      |   |
+| CP Nuestra Señora de Monserrate (Oriola - Molins) |   |
+| CP Rincón de Bonanza (Oriola - Bonanza)           |   |
+| CP San Bartolomé (Oriola - San Bartolomé)         |   |
+| CP Villar Palasí (Oriola)                         |   |
+| Escuela de Arte y Superior y Diseño (Oriola)      |   |
+| EI Virgen de Monserrate (Oriola)                  |   |
+
+Y para contarlo, lo mismo que antes:
+
+#+BEGIN_SRC sh
+grep -c "Santa Pola\|Oriola" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+: 9
+
+*** OR con | y -E
+
+Añadimos =c= a las opciones para que no salgan los resultados sino que
+los cuente.
+
+#+BEGIN_SRC sh
+grep -cE "Alacant|Elx" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+: 50
+
+*** egrep
+
+=egrep= es lo mismo que =grep -E=. Añadimos la opción =c= para que
+muestre las veces que aparece.
+
+#+BEGIN_SRC sh
+egrep -c "Alacant|Elx" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 50
+
+#+END_SRC
+
+*** grep -e -e
+
+Lo mismo pero cada vez que filtramos ponemos la palabra tras la opción
+=e= y al final, =c=.
+
+#+BEGIN_SRC sh
+grep -e "Elx" -e "Alacant" data/155.csv -c
+
+#+END_SRC
+
+#+RESULTS:
+: 50
+
+** grep AND
+
+Aunque no hay operador =AND= en =grep=, podemos hacerlo de varias
+maneras:
+
+- Con la opción =-E= y separando las cadenas con =.*=:
+- Encadenando =grep=
+
+*** TODO grep AND -E .*
+
+#+BEGIN_SRC sh
+grep -E "Elx.* CP" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+
+Nos dará por la salida estándar cuántos colegios públicos de Elx hay.
+
+*** grep AND -E |
+#+BEGIN_SRC sh
+grep -E "Elx" data/155.csv | grep -Ec "CP"
+
+#+END_SRC
+
+#+RESULTS:
+: 26
+
+26 son los colegios públicos (CP) de Elx.
+
+** grep NOT
+Con el uso de la opción =-v= se pueden simular condiciones =NOT=.
+
+La opción =-v= es para búsquedas inversas, es decir, busca todas las
+líneas excepto las que cumplan este patrón. Por ejemplo:
+
+#+BEGIN_SRC sh
+grep -vEc "CP|IES" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 31
+
+31 centros no son ni CP ni IES.
+
+** Jugamos con combinaciones
+
+Si queremos buscar los centros que no sean CP o IES de Elx y Oriola:
+
+#+BEGIN_SRC sh
+grep -vE "CP|IES" data/155.csv | grep -Ec "Elx|Oriola"
+
+#+END_SRC
+
+#+RESULTS:
+: 12
+
+
+* cut
+Con =cut= extraemos secciones de un archivo, según las opciones:
+- =c=, para caracteres.
+- =d=, para delimitadores concretos.
+- =z=, para terminaciones.
+
+** Extraer por caracteres
+Si quisiéramos extraer los primeros tres caracteres del archivo:
+
+#+BEGIN_EXAMPLE
+cut -c1-4 data/155.csv
+#+END_EXAMPLE
+
+Eso nos resolvería si el identificador de instalación fuera siempre
+del mismo número de caracteres.
+
+** Extraer por campos
+
+Considerado un conjunto de datos con un delimitador, podemos
+identificar =n= campos.
+
+En el caso que nos ocupa, dado que tenemos un espacio entre la
+identificación de la instalación y su nombre, podríamos seleccionar el
+primer campo de datos, el de identificación, si consideramos el
+espacio en blanco como delimitador.
+
+#+BEGIN_SRC sh :results html
+cut -f 1 -d ' ' data/155.csv
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+Colegios,Localidad
+CP
+CEIP
+Colegio
+Colegio
+Colegio
+Colegio
+"CPFA
+CIPFP
+CIPFP
+CIPFP
+Conservatori
+CP
+CP
+Colegio
+CP
+Colegio
+CP
+Colegio
+Colegio
+CP
+CP
+Colegio
+CP
+CP
+CEIP
+CP
+Colegio
+Colegio
+CP
+CP
+CP
+CP
+Colegio
+CP
+CP
+Colegio
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+Colegio
+Colegio
+CP
+Colegio
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+"CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+"CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+Colegio
+CP
+Colegio
+CP
+CP
+CP
+CP
+Colegio
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CP
+CRA
+CRA
+Escuela
+IES
+IES
+IES
+IES
+IES
+IES
+IES
+IES
+IEs
+IES
+IES
+IES
+IES
+IES
+EI
+CP
+#+END_EXPORT
+
+Parece que hemos conseguido seleccionar algunos de los identificadores,
+independientemente del número de caracteres que contengan, por lo que
+vamos a guardar la selección en un archivo:
+
+#+BEGIN_SRC sh :results
+cut -f 1 -d ' ' data/155.csv > data/id-cut-c.csv
+
+#+END_SRC
+
+#+RESULTS:
+
+Y para verlos:
+#+BEGIN_SRC sh :results html
+head -n5 data/id-cut-c.csv
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+Colegios,Localidad
+CP
+CEIP
+Colegio
+Colegio
+#+END_EXPORT
+
+Vemos que nos selecciona bien algunas líneas (CP, CEIP) pero otras no
+(Colegio). Esto es porque =Colegio Público= está escrito también como
+CP, por lo que podríamos reemplazar esa cadena por CP para que esta
+operación nos salga bien.
+
+* paste
+Lo contrario que =cut=
+
+* fold
+Breaks long input lines. The primary use is formatting, but fold is sometimes useful in linguistic text processing. For example, if you need to get each character onto a line by itself, the command
+
+fold -w 1
+
+, which sets the line length to one character, will do the job. GNU fold understands Unicode.
+* sed
+
+Sed es un editor del flujo de datos que permite filtrar y transformar
+texto.
+
+** Cambiar una cadena de caracteres por otra
+
+Si queremos unificar nuestro documento y que cuando aparece ~Colegio
+Público~ aparezca ~CP~, hacemos:
+
+#+BEGIN_SRC sh
+sed 's/Colegio Público/CP/g' data/155.csv > data/155-sed-cp.csv
+
+#+END_SRC
+
+#+RESULTS:
+
+Como he enviado la salida a un archivo, no lo veo por aquí, Para
+explorarlo, voy a volver a ver como antes las 5 primeras líneas con
+=head=:
+
+#+BEGIN_SRC sh
+head -n5 data/155-sed-cp.csv
+
+#+END_SRC
+
+#+RESULTS:
+| Colegios                                   | Localidad |
+| CP Concepción Arenal (Villareal)           |           |
+| CEIP Els Garrofers (Elx)                   |           |
+| CP Hispanidad (Elx)                        |           |
+| CP Nuestra Señora De La Asunción (Vinaròs) |           |
+
+Ya no tenemos la cadena =Colegio Público= porque la hemos sustituido
+con =sed= por =CP=.
+
+** sed con regexp
+
+Lo que hemos hecho antes ha sido utilizar =sed= con la opción
+=regexp=, es decir, expresiones regulares.
+
+Con =sed= se utilizan de esta manera:
+
+#+BEGIN_EXAMPLE
+sed s/regexp/reemplazo/
+#+END_EXAMPLE
+
+Repasando el archivo con =more= también observo unas comillas que pueden
+molestar, que podríamos quitar con una nueva expresión regular:
+
+#+BEGIN_SRC sh
+sed 's/"//g' data/155-sed-cp.csv > data/155-sed-comillas.csv
+
+#+END_SRC
+
+#+RESULTS:
+
+** TODO Para seleccionar líneas con una cadena
+#+BEGIN_SRC sh
+sed -n '/Orio/p' data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+| CP Fernando de Loaces (Oriola)                    |   |
+| CP Maestro Ismael García (Oriola, La Murada)      |   |
+| CP Nuestra Señora de Monserrate (Oriola - Molins) |   |
+| CP Rincón de Bonanza (Oriola - Bonanza)           |   |
+| CP San Bartolomé (Oriola - San Bartolomé)         |   |
+| CP Villar Palasí (Oriola)                         |   |
+| Escuela de Arte y Superior y Diseño (Oriola)      |   |
+| EI Virgen de Monserrate (Oriola)                  |   |
+
+** TODO Cambia el orden de dos cadenas
+#+BEGIN_EXAMPLE
+sed -r 's/(cadena1)(cadena2)/\2\1/g
+#+END_EXAMPLE
+** Separar por delimitador
+
+Aunque no hay un delimitador, de datos en columnas, sí que hay un dato
+entre paréntesis, la localidad (en casi todos los casos).
+
+Vamos a sacar el texto de los paréntesis:
+
+#+BEGIN_SRC sh
+cut -f 2 -d '(' data/155-sed-comillas.csv > data/155-cut-parentesis-2.csv
+#+END_SRC
+
+#+RESULTS:
+
+Y ahora borramos la parte final, que siempre es =),= con =sed=:
+#+BEGIN_SRC sh
+sed 's/),//g' data/155-cut-parentesis-2.csv > data/155-sed-lugar.csv && head -5 data/155-sed-lugar.csv
+
+#+END_SRC
+
+#+RESULTS:
+| Colegios,Localidad |
+| Villareal          |
+| Elx                |
+| Elx                |
+| Vinaròs            |
+
+Y vamos a sacar el texto de antes de los paréntesis
+
+#+BEGIN_SRC sh :results html
+cut -f 1 -d '(' data/155-sed-comillas.csv > data/155-cut-parentesis-1.csv && head -5 data/155-cut-parentesis-1.csv
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+Colegios,Localidad
+CP Concepción Arenal 
+CEIP Els Garrofers 
+CP Hispanidad 
+CP Nuestra Señora De La Asunción 
+#+END_EXPORT
+
+Y ahora seleccionamos la primera cadena, el tipo de colegio, de la
+misma manera:
+
+#+BEGIN_SRC sh :results html
+cut -f 1 -d ' ' data/155-cut-parentesis-1.csv > data/155-cut-parentesis-0.csv && head -5 data/155-cut-parentesis-0.csv
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+Colegios,Localidad
+CP
+CEIP
+CP
+CP
+#+END_EXPORT
+
+Hemos conseguido tres CSV con tres tipos de datos: tipo de colegio,
+nombre de colegio y localidad.
+
+*** TODO Reto
+Pero además, en las localidades, en algunas aparece la pedanía,
+separada por un guión, por lo que podríamos operar igual, pero al no
+estar en todas las líneas, no funciona:
+
+#+BEGIN_SRC sh :results html
+cut -f 2 -d '-' data/155-cut-parentesis-2.csv > data/155-cut-parentesis-3.csv && grep -n ')' data/155-cut-parentesis-3.csv
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+2:Villareal),
+3:Elx),
+4:Elx),
+5:Vinaròs),
+6:Ondara),
+7:Elx),
+8:antiguo CP El Serafico, Elda),
+9:Quart de Poblet),
+10:Xàtiva),
+11:València),
+12:Elx),
+13:Alzira),
+14:Oliva),
+15: Torrellano),
+16:Benejúzar),
+17:Benferri),
+18:Alzira),
+19:Alacant),
+20:Santa Pola),
+21:Elx),
+22:València),
+23:Alaquàs),
+24:Almoradí),
+25: San Felipe),
+26:València),
+27:Elx),
+28:Monòvar),
+29:Alboraia),
+30:València),
+31:Sax),
+32:Elx),
+33:València),
+34:Elx),
+35:Godella),
+36:Alacant),
+37:Elx),
+38:Alacant),
+39:Montserrat),
+40:Manises),
+41:Oriola),
+42:Alacant),
+43:Elx),
+44:Alacant),
+45:Torrevieja),
+46:Elx),
+47:Alcàsser),
+48:Catarroja),
+49:Mislata),
+50:Xeraco),
+51:Alacant),
+52:Alacant),
+53:Elx),
+54:Daya Nueva),
+55:Formentera del Segura),
+56:Xella),
+57:Elx),
+58: Altabix),
+59: La Marina),
+60:Bigastro),
+61:Bigastro),
+62:Callosa del Segura),
+63:Elx),
+64:L'Alcúdia),
+65:Paiporta),
+66:València),
+67:Elx),
+68:Elx),
+69:Elx),
+70:Alzira),
+71:Oliva),
+72:Oriola, La Murada),
+73:València),
+74:Almoradí),
+75:València),
+76:L'Olleria),
+77:Crevillent),
+78:Elx),
+79: Perleta),
+80:Elx, Las Bayas),
+81:Algorfa),
+82:Elx),
+83:Crevillent),
+84:Elx),
+85:Alacant),
+86:Burjassot),
+87:València),
+88: Molins),
+89:Alfafar),
+90:Càrcer),
+91:Crevillent),
+92:Villena),
+93:València),
+94:Alacant),
+95:Callosa del Segura),
+96:Quart de Poblet),
+97:Elx),
+98:València),
+99:Algemesí),
+100: Bonanza),
+101: L'Altet),
+102: La Hoya),
+103: San Bartolomé),
+104:Albal),
+105:Sedaví),
+106:Elx),
+107:Dolores),
+108:Benijòfar),
+109:Elx),
+110:València),
+111:Alfara del Patriarca),
+112:Alacant),
+113:Callosa del Segura),
+114:Rocafort),
+115:Elx),
+116:Torrent),
+117:Villanueva de Castellón),
+118:Alacant),
+119:Alzira),
+120:Alzira),
+121: Valverde),
+122:Elx),
+123:Montesa),
+124:València),
+125:Manises),
+126:Elx),
+127:Oriola),
+128:Sagunt),
+129:València),
+130:Jacarilla),
+131:Cox),
+132:Oliva),
+133:Dolores),
+134:Cox),
+135:Rafelbunyol),
+136:Albatera),
+137:Massamagrell),
+138:Olocau),
+139:Torre d'En Besora),
+140:Oriola),
+141:Alacant),
+142:Alagemesí),
+143:València),
+144:Llíria),
+145:Alzira),
+146:Elx),
+147:Elx),
+148:Torrevieja),
+149:Elx),
+150:Benicarló),
+151:Alzira),
+152:Callosa del Segura),
+153:Gandia),
+154:Callosa del Segura),
+155:Oriola),
+156:Elx),
+#+END_EXPORT
+
+** Eliminar línea
+
+Dado que estoy limpiando los archivos, en este último quitaré la
+primera línea que como he visto antes contiene la cabecera del
+conjunto de datos, es decir:
+
+#+BEGIN_SRC sh
+head -1 data/155-sed-lugar.csv
+#+END_SRC
+
+#+RESULTS:
+| Colegios | Localidad |
+
+La cabecera con =Colegios= en la primera columna y =Localidad= en la
+segunda no me estaba funcionando dado que todos los datos estaban en
+la primera columna.
+
+Para eliminar esta fila, lo hacemos con la opción de =sed= ='1d'=.
+
+#+BEGIN_SRC sh
+sed '1d' data/155-sed-lugar.csv > data/155-sed-lugar-limpio.csv 
+#+END_SRC
+
+#+RESULTS:
+
+Comprobamos:
+
+#+BEGIN_SRC sh
+head -1 data/155-sed-lugar-limpio.csv
+
+#+END_SRC
+
+#+RESULTS:
+: Villareal
+
+** Eliminar línea en blanco
+
+Si hubiera una o más líneas en blanco, podríamos eliminarlo con:
+
+#+BEGIN_EXAMPLE
+sed '/^$/d' data/155-sed-lugar-limpio.csv
+#+END_EXAMPLE
+
+** Eliminación de signos
+Si quisiéramos eliminar líneas que contengan algunos de los signos de
+comentar al inicio, como por ejemplo una almohadilla =#= en /Perl/, /Python/, /Ruby/ o
+/R/, haremos:
+
+#+BEGIN_SRC sh
+sed '/ *#/d; /^$/d; / *\*/d' data/prueba-sed.txt > data/prueba-sed-post.txt
+
+#+END_SRC
+
+#+RESULTS:
+
+Lo malo de este ejemplo es si se han escrito comentarios de bloque y
+no de línea, pero no dejemos que ese supuesto arruine este ejemplo ;-)
+
+** Convertir un TSV a CSV
+
+#+BEGIN_EXAMPLE
+sed 's/"/\\\"/g; s/^/"/; s/$/"/; s/ctrl-V<TAB>/","/g;' origFile.tsv > newFile.csv
+#+END_EXAMPLE
+
+** Concatenación de tres comandos
+Otro ejemplo, concatenando tres comandos: =head=, =tail= y =cut=:
+
+Ya hemos hecho la concatenación de dos comandos, como por ejemplo ver
+las líneas 15 a 20 con la combinación de =head= (cabecera) y =tail=
+(cola).
+
+Primero sacamos los 20 primeras líneas y luego le decimos que de esas
+20 primeras solo queremos las cinco últimas entubando los resultados
+del primer comando al segundo:
+
+#+BEGIN_SRC sh :results html
+head -n20 data/155.csv | tail -n5
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+CP Antonio Sequeros (Benejúzar),
+Colegio Público Argentina (Benferri),
+CP Ausiàs March (Alzira),
+Colegio Público Azorín (Alacant),
+Colegio Público Azorín (Santa Pola),
+#+END_EXPORT
+
+Si entubamos ese resultado a =cut= con la opción =c1-4=, obtenemos los
+primeros cuatro caracteres de las líneas 15-20 de =155.csv=.
+
+#+BEGIN_SRC sh :results html
+head -n20 data/155.csv | tail -n5 | cut -c1-4
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+CP A
+Cole
+CP A
+Cole
+Cole
+#+END_EXPORT
+* split
+El comando =split= viene muy bien cuando estamos trabajando con un
+fichero muy largo ya que permite dividrlo en varios.
+
+Siguiendo con el ejemplo original, si quisiéramos dividir nuestro
+fichero de 155 líneas en archivos de 10 líneas, podríamos hacerlo con
+=split=, ofreciendo la posibilidad de nombrarlos de forma especial:
+
+#+BEGIN_SRC sh :results html
+split -l 10 data/155.csv data/diez_  && ls -a data/diez*
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+data/diez_aa
+data/diez_ab
+data/diez_ac
+data/diez_ad
+data/diez_ae
+data/diez_af
+data/diez_ag
+data/diez_ah
+data/diez_ai
+data/diez_aj
+data/diez_ak
+data/diez_al
+data/diez_am
+data/diez_an
+data/diez_ao
+data/diez_ap
+#+END_EXPORT
+
+Si quisiéramos saber cuántos archivos hay, tendríamos que entubar ese
+resultado por =wc -l=, que nos contaría el número de líneas:
+
+
+#+BEGIN_SRC sh
+split -l 10 data/155.csv data/diez_ && ls -l data/diez* |wc -l
+#+END_SRC
+
+#+RESULTS:
+: 16
+
+Veamos el contenido del último archivo:
+
+#+BEGIN_SRC sh :results html
+more data/diez_ap
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+::::::::::::::
+data/diez_ap
+::::::::::::::
+IES Rei En Jaume (Alzira),
+IES Santiago Grisolía (Callosa del Segura),
+IES Tirant Lo Blanc (Gandia),
+IES Vega Baja (Callosa del Segura),
+EI Virgen de Monserrate (Oriola),
+CP El Palmeral (Elx),
+#+END_EXPORT
+
+Si quisiéramos darles una extensión, podríamos renombrarlos o bien
+utilizar en =split= la opción =--additional-suffix=SUFFIX=:
+
+#+BEGIN_SRC sh
+split -l 10 data/155.csv data/diez_ --additional-suffix=.csv && ls -l data/diez*.csv |wc -l
+
+#+END_SRC
+
+#+RESULTS:
+: 16
+
+
+* awk
+
+Con =awk= podemos explorar una de esas columnas de datos del =CSV=.
+
+Vamos a empezar con el mismo archivo pero vamos a incorporar el de [[http://datos.madrid.es/sites/v/index.jsp?vgnextoid=139afaf464830510VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD][la
+actividad contractual del Ayuntamiento de Madrid]], disponible en su
+[[http://datos.madrid.es][portal de datos abiertos.]]
+
+
+Podemos descargarlo con =wget= o =curl=:
+
+#+BEGIN_EXAMPLE
+wget -O contratos-madrid.csv http://datos.madrid.es/egob/catalogo/216876-20-contratos-actividad.csv
+#+END_EXAMPLE
+
+Si hacemos un =file= al archivo, veremos si está bien:
+
+#+BEGIN_EXAMPLE
+file contratos-madrid.csv
+#+END_EXAMPLE
+
+La salida de este comando dice:
+
+#+BEGIN_EXAMPLE
+contratos-madrid.csv: Non-ISO extended-ASCII text, with very long lines, with CRLF line terminators
+#+END_EXAMPLE
+
+Parece que no está correctamente configurada su codificación de
+caracteres. De hecho, si vemos la primera fila:
+#+BEGIN_EXAMPLE
+Mes;A�o;Descripci�n Centro;Organismo;N�mero Contrato;N�mero Expediente;Descripci�n Contrato;Tipo Contrato;Procedimiento Adjudicaci�n;Art�culo;Apartado;Criterios Adjudicaci�n;Presupuesto Total          (IVA Incluido);Importe Adjudicaci�n   (IVA Incluido);Plazo;Fecha Adjudicaci�n;Nombre/Raz�n Social;NIF/CIF Adjudicatario;Fecha Formalizaci�n;Acuerdo Marco;Ingreso/Coste Cero;Observaciones;;;
+#+END_EXAMPLE
+
+Para convertir su codificación de caracteres emplearemos =iconv=:
+
+#+BEGIN_EXAMPLE
+iconv --from-code=ISO-8859-1 --to-code=UTF-8 contratos-madrid.csv > contratos.csv
+
+#+END_EXAMPLE
+
+Donde le decimos que de la codificación en *ISO-8859-1* lo convierta
+en *UTF-8*.
+
+** Ver los datos de una columna
+
+Antes lo hemos hecho con =cut=, pero ahora veremos con =awk= cómo ver
+los datos de una columna.
+
+Primero, vamos a ver qué separador utiliza el CSV:
+
+#+BEGIN_SRC sh
+head -1 data/contratos.csv
+
+#+END_SRC
+
+#+RESULTS:
+: Mes;Año;Descripción Centro;Organismo;Número Contrato;Número Expediente;Descripción Contrato;Tipo Contrato;Procedimiento Adjudicación;Artículo;Apartado;Criterios Adjudicación;Presupuesto Total          (IVA Incluido);Importe Adjudicación   (IVA Incluido);Plazo;Fecha Adjudicación;Nombre/Razón Social;NIF/CIF Adjudicatario;Fecha Formalización;Acuerdo Marco;Ingreso/Coste Cero;Observaciones;;;
+
+#+BEGIN_SRC sh
+awk -F "(" '{print $2}' data/155.csv >> data/155-awk-localidad.csv
+
+#+END_SRC
+
+#+RESULTS:
+** Dividir el archivo en varios
+Antes hacíamos con =split=, pero también podemos con =awk=:
+
+#+BEGIN_SRC sh
+awk '{filename = "wrd." int((NR-1)/10000) ".txt"; print >> filename}' inputfile
+
+#+END_SRC
+
+
+* find
+El comando =find= es un potente buscador sobre nuestros archivos y
+ carpetas/directorios.
+
+Si estamos usando /Cygwin/, antes debemos modificar la variable
+ =HOME=.
+
+Como cualquier otro comando, su estructura comienza con el comando,
+luego la ruta sobre la que deseamos buscar, las opciones de búsqueda y
+finalmente la expresión que buscamos, =find [ruta] [opciones]
+[expresión]=.
+
+Algunas opciones que tenemos son:
+- =-name=, busca por nombre
+- =-size=, busca por tamaño.
+- =iname=, busca en modo sensitivo.
+- =atime=, la fecha/hora de la última modificación.
+- Permisos
+- Propiedad
+
+** Solo find
+Si solo lanzamos =find=, nos devolverá los archivos, directorios y
+subdirectorios por debajo del lugar donde nos encontramos.
+
+Miremos primero dónde nos encontramos, volvamos a =pwd=:
+
+
+#+BEGIN_SRC sh
+pwd
+
+#+END_SRC
+
+#+RESULTS:
+: /home/flow/proyectos/upv-periodismo-datos
+
+*** ¿Dónde nos encontramos?
+
+Según el sistema operativo que utilicemos, esta orden nos devolverá
+rutas distintas:
+En GNU/Linux, como es mi caso:
+#+BEGIN_EXAMPLE
+/home/usuarix/proyectos/upv-periodismo-datos
+#+END_EXAMPLE
+
+En [[http://adrianvergarainformatica.esy.es/estructura-de-directorios-en-windows/][Windows]]:
+#+BEGIN_EXAMPLE
+c:\Users\Mengana\Documents\upv-periodismo-datos
+#+END_EXAMPLE
+
+*** find sobre directorio
+
+En ese caso, si hacemos =find= sobre este directorio, vamos a ver qué
+contiene:
+
+#+BEGIN_EXAMPLE
+find
+#+END_EXAMPLE
+
+Nos devolverá:
+- Archivos.
+- Directorios.
+- Archivos de los directorios
+
+*** Otras formas de find sobre directorio
+
+Se puede hacer =find= también de dos formas:
+
+- =find .=
+- =find . -print=.
+
+** find con ruta, filtro y término
+
+Pero normalmente lo utilizaremos siguiendo esta estructura:
+
+#+BEGIN_EXAMPLE
+find ruta filtro-de-búsqueda término-de-búsqueda
+#+END_EXAMPLE
+
+** otra ruta
+Podemos poner otra ruta:
+
+#+BEGIN_EXAMPLE
+find ~/docs/softwarelibre/
+#+END_EXAMPLE
+
+Si queremos ver los archivos que tengo en la carpeta =softwarelibre=
+que está dentro de =docs= dentro de mi =home= de usuarix.
+
+
+** find -atime
+
+** ejemplo find Readme.org
+Vamos a buscar ahora todos los archivos =Readme.org= por debajo de un
+directorio con la opción =-name= y voy a entubar la salida con a =wc -l= 
+
+#+BEGIN_SRC sh :results output raw
+find ~/ownCloud/proyectos/ -name Readme.org | wc -l
+#+END_SRC
+
+#+RESULTS:
+74
+
+** ejemplo find comodines
+Y también podemos incluir /comodines/. Por ejemplo, si quisiéramos todos los
+archivos =*.org=, no solo los que se llaman =Readme.org=:
+
+#+BEGIN_SRC sh :results output raw replace
+find ~/ownCloud/proyectos -name *.org | wc -l
+
+#+END_SRC
+
+#+RESULTS:
+74
+74
+13
+
+** find regexp en archivo
+Y si no queremos todos los archivos sino alguno en concreto, por
+ejemplo, que contuviera /bash/:
+
+#+BEGIN_SRC sh :results html
+find ~/ownCloud/docs/softwarelibre -name *bash*.org
+
+#+END_SRC
+
+** find tamaño de archivos
+O tamaños de archivos:
+
+#+BEGIN_SRC shell :results html
+find . -size +1M
+
+#+END_SRC
+
+** find tamaño de directorios
+O de directorios
+
+#+BEGIN_SRC shell :results html
+find ~/ -folder +300M
+#+END_SRC
+
+** find tipo de archivo
+O tipo de archivo:
+
+#+BEGIN_SRC shell :results html
+find . -type f *.org
+#+END_SRC
+
+** find encontrar archivos y borrarlos
+O encontrar archivos más antiguos que un año y borrarlos:
+#+BEGIN_EXAMPLE
+find .cache/ -type f -atime +365 -exec rm \;
+#+END_EXAMPLE
+
+** find encontrar y ordenar
+Encontrar y ordenar
+
+#+BEGIN_SRC shell :results html
+find ~/Descargas/ -size +30M | sort -hr
+#+END_SRC
+
+** TODO find script bash
+Y programar:
+
+#+BEGIN_EXAMPLE
+find ./ -name "*.png" | sort | while read file; do tesseract $file "`basename $file" | sed 's/\.[[:alnum:]]*$//'`.txt -l spa -psm 3; done
+#+END_EXAMPLE
+
+Donde:
+- Encontramos los archivos del tipo =png= sobre la carpeta elegida
+- Los ordenamos con =sort=
+- Empezamos bucle con =while=
+- Ejecutamos =tesseract= (herramienta OCR) sobre cada archivo =$file=
+- Cambiamos el nombre y el tipo a =txt=.
+
+* tr
+
+Se utiliza para manipular el texto.
+
+** Convertir todo en mayúsculas
+
+Para convertir todo el texto en mayúsculas, empleamos:
+
+#+BEGIN_EXAMPLE
+cat data/prueba-sed.txt | tr '[:lower:]' '[:upper:]' > data/prueba-sed-upper.txt
+
+#+END_EXAMPLE
+
+* Comandos múltiples
+- Podemos ejecutar un comando
+- Pero también un comando y después otro
+- O un comando y si tiene éxito entonces el segundo.
+- Al reves, un comando si el primero no tuvo éxito.
+
+Ejemplos
+** =;=
+Si queremos ejecutar un comando y luego otro, independientemente de si
+el primero da error, utilizamos el operador =;=
+
+*** Ejemplo de éxito
+
+En este ejemplo, la primera orden ofrece resultados, y por eso el
+=echo= tiene sentido:
+#+BEGIN_SRC sh :results html
+grep BLESA black-is-black.csv | wc -l ; echo "líneas con la palabra BLESA...\n¡Qué pasada!"
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+1650
+líneas con la palabra BLESA...
+¡Qué pasada!
+#+END_EXPORT
+
+*** Ejemplo fallido
+En este ejemplo, no devuelve resultados porque no hay un archivo
+llamado black. Sin embargo, aparece el mensaje a continuación como en
+el primer caso, que resulta un poco incongruente.
+#+BEGIN_SRC sh :results html
+grep CLESA black; echo "líneas con la palabra CLESA...\n¡Qué pasada!"
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_EXPORT html
+líneas con la palabra CLESA...
+¡Qué pasada!
+#+END_EXPORT
+
+
+** TODO =&&=
+
+Si queremos ejecutar el comando, y que siga con el segundo sólo si el
+primero devuelve algo, utilizamos el operador /&&/:
+
+#+BEGIN_SRC sh :results org
+grep CLESA black && echo "líneas con la palabra CLESA...\n¡Qué pasada!"
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+#+END_SRC
+
+** TODO =||=
+
+Al contrario, si queremos ejecutar un comando después de otro pero
+queremos que se ejecute el segundo solo si el primero dio error,
+usaremos el operador =||=:
+
+#+BEGIN_SRC sh :results org
+grep CLESA black-is-black || echo "No hay ningún chorizo CLESA"
+
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+No hay ningún chorizo CLESA
+#+END_SRC
+
+* Sobre los datos
+
+** diff
+=diff= Mostrar diferencias entre ficheros:
+diff Black.csv Black_corrupcion.csv
+Comparar dos archivos. Si son iguales, no devuelve nada, si difieren muestra el byte y el número de línea de la primera diferencia.
+cmp Black.csv Black_corrupcion.csv
+Para reemplazar
+** paste
+para unir líneas de archivos
+** sort
+para ordenar
+** uniq
+Cuando se ofrece una entrada de datos ordenados, escribe una salida
+estándar con las líneas que son únicas.
+
+Nos puede decir cuántas líneas están repetidas, las que no están
+repetidas o solo las que están repetidas.
+
+
+* For do 
+=for do= es una de las operaciones más simples y útiles que se pueden
+realizar en la línea de comandos.
+
+#+BEGIN_EXAMPLE
+for f i $(iconv -l); do echo "Convirtiendo $f ..."; iconv -f $f -t UTF-8 > file_name.csv > file_name.$f.csv; done
+#+END_EXAMPLE
+
+* Establecer carácter y conversión de ficheros
+** Fichero de texto MSDOS a Unix
+
+#+BEGIN_EXAMPLE
+dos2unix filedos.txt fileunix.txt
+#+END_EXAMPLE
+
+** Fichero de texto Unix a MSDOS
+#+BEGIN_EXAMPLE
+unix2dos fileunix.txt filedos.txt
+#+END_EXAMPLE
+
+** Convertir fichero de texto en HTML
+#+BEGIN_EXAMPLE
+recode ..HTML < page.txt > page.html
+#+END_EXAMPLE
+
+** Más conversiones
+#+BEGIN_EXAMPLE
+recode -l | more
+#+END_EXAMPLE
