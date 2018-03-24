@@ -10,7 +10,7 @@
 
 Basado en muchos documentos, horas, pruebas y aciertos previos.
 
-Documento en construcción. Si tienes alguna sugerencia, escribe una issue.
+Documento en construcción. Si tienes alguna sugerencia, [[https://github.com/flowsta/operaciones-logicas-datos/issues/new][escribe una issue]].
 
 * Historia
 

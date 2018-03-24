@@ -182,7 +182,7 @@ Mac. Podemos descargarlo desde:
 - [[https://www.gnu.org/order/ftp.html][elegir un mirror]]
 - dejar que nos sugieran el mirror [[http://ftpmirror.gnu.org/emacs/][más cercano a nuestra ubicación.]]
 
-** Cygwin
+** Cygwin para Windows
 
 Hemos de hacer 3 pasos:
 1. Instalar los paquetes con los que queremos trabajar.
@@ -276,15 +276,89 @@ mkpasswd -l -p "$(cygpath -H)" > /etc/passwd
 
 
 
-** Markdown
+*** Apt-cyg
 
-- Es una sintaxis simple heredera de las sintaxis del correo
-  electrónico en modo texto y otras.
-- Lo inventó John Gruber para escribir y leer fácil =HTML=.
-- Además de una sintaxis, es un =parser= o conversor.
-- Algunos enlaces: [[https://github.com/flowsta/markdown][mis apuntes de Markdown]], [[http://docs.podigee.com/guides/markdown-cheatsheet.html][Markdown Cheatsheet]] y [[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf][R
-  Markdown Cheatsheet: R, Markdown y YAML]]
+[[https://github.com/transcode-open/apt-cyg][apt-cyg]] es un gestor de paquetes de Cygwin que incluye un instalador en línea de comandos para Cygwin que
+trabaja con con la instalación de Cygwin y usa el mismo repositorio.
 
+**** Operaciones
+
+- =install= :: instalar paquete(s)
+- =remove= :: borrar paquete(s)
+- =update= :: actualiza una copia actualizada de la lista de paquetes (=setup.ini=) de un servidor definido en
+              la instalación.
+- =download= :: descarga paquete(s) desde el servidor, pero no los instala ni actualiza.
+- =show= :: muestra información de determinado(s) paquete(s).
+- =depends= :: muestra un árbol de dependencias de un paquete.
+- =rdepends= :: produce un árbol de dependencias de determinado paquete.
+- =list= :: busca sobre los nombres de los paquetes instalados que coincidan con la expresión regular. Si no
+            se ofrecen nombres, se buscaran todos los paquetes.
+- =listall= :: buscará cada paquete en el listado de paquetes maestro (setup.ini) por nombres que coincidan
+               con la expresión regular.
+- =category= :: muestra todos los paquetes de una determinada categoría.
+- =listfiles= :: lista todos los archivos que pertenecen a un(os) paquete determinado(s).
+- =search= :: busca por paquetes descargados que pertenecen a los archivos especificados. La ruta puede ser
+              absoluta o relativa y se pueden especificar más de un archivo.
+- =searchall= :: busca sobre cygwin.com información sobre paquetes. Se devolverá el paquete que lo contiene.
+
+**** Instalación
+
+=apt-cyg= es un script. Para instalarlo, usaremos =lynx= o =wget=:
+
+#+BEGIN_SRC sh
+lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
+install apt-cyg /bin
+#+END_SRC
+
+**** Ejemplo
+
+Si quisiéramos instalar =nano=:
+#+BEGIN_SRC sh
+apt-cyg install nano
+
+#+END_SRC
+
+*** nodejs y Cygwin
+
+**** Instalación de nodejs en Windows
+Descarga e instala la [[https://nodejs.org/en/download/][versión apropiada]] de nodejs.
+
+**** Conexión con Cygwin
+Tal como explica [[https://stackoverflow.com/users/937112/troy][troy]] en Stackoverflow: [[https://stackoverflow.com/questions/10043177/node-js-cygwin-not-supported][Nodejs Cygwin not supported]], hay que poner la ruta de nodejs en el
+=.bashrc= para que Cygwin sepa encontrarlo.
+
+#+BEGIN_EXAMPLE
+export PATH=$PATH:"/cygdrive/c/Program Files/nodejs/"
+
+#+END_EXAMPLE
+
+O, si tu versión de node es de 32 bits:
+#+BEGIN_EXAMPLE
+export PATH=$PATH:"/cygdrive/c/Program Files (x86)/nodejs/"
+
+#+END_EXAMPLE
+
+Luego, para hacer que corra sin algunos problemas conocidos, se lanza cygwin en modo admin y se ejecuta:
+
+#+BEGIN_EXAMPLE
+dos2unix '/cygdrive/c/Program Files/nodejs/npm'
+
+#+END_EXAMPLE
+
+Si quieres correr el intérprete directamente, hay que ejecutar:
+
+#+BEGIN_EXAMPLE
+cygstart /bin/bash
+#+END_EXAMPLE
+
+Esto abre una ventana nativa cygwin =bash.exe=.
+
+Para probarlo, ejecuta:
+
+#+BEGIN_EXAMPLE
+node -e "console.log('hola, nodejs')"
+
+#+END_EXAMPLE
 * Línea de comandos
 - La línea de comandos es una interfaz de usuarix basada en líneas de
 comandos (/Command Line Interface/ o /CLI)/.
@@ -833,6 +907,27 @@ rwx --- --- = 321 000 000
 Así, si quisieramos dar todos los permisos al archivo =hola.txt=, haríamos:
 #+BEGIN_SRC 
 chmod 777 hola.txt
+#+END_SRC
+
+* Disable mouse in Emacs
+Steve Purcell ha escrito [[https://github.com/purcell/disable-mouse][Disable Mouse]], un modo menor para forzarte a usar el teclado en Emacs. Lo puedes usar
+local o globalmente
+
+De forma manual, hay que escribir:
+#+BEGIN_SRC emacs-lisp
+(require 'disable-mouse)
+(global-disable-mouse-mode)
+
+#+END_SRC
+
+Si usas Melpa o una versión reciente de package.el puedes instalarlo.
+
+Para habilitar =global-disable-mouse-mode= con =M-x global-disable-mouse-mode= o bien poner en el archivo de
+arranque:
+
+#+BEGIN_SRC emacs-lisp
+(global-disable-mouse-mode)
+
 #+END_SRC
 
 * Configuración de la terminal
@@ -1400,8 +1495,11 @@ grep [0-9] data/155.csv
 #+RESULTS:
 : CP Nº 54 (Alacant)
 
+Solo uno de ellos contiene números.
+
 ** Contar los resultados de la búsqueda con grep
-Para contar esos resultados, le añadimos la opción =-c=
+Siempre hay varias formas de hacer las cosas. Para contar las líneas, podríamos haber pensado en ~wc -l~, pero
+el propio ~grep~ cuenta con esta opción: ~grep -c~
 
 #+BEGIN_SRC sh
 grep -c "Elx" data/155.csv
@@ -1410,9 +1508,24 @@ grep -c "Elx" data/155.csv
 #+RESULTS:
 : 38
 
+38 colegios en los que aparece la palabra =Elx= escrita de esta manera.
+
+Para asegurarnos que no está escrita de otras maneras, como por ejemplo =ELX= o =elx=, podríamos utilizar la
+opción ~-i~, que se pregunta por esos caracteres en la búsqueda ya estén en mayúsculas (/uppercase/),
+minúsculas (/lowercase/) o mixta. Es decir, que deja de ser /case sensitive/ (discriminación por mayúsculas o
+minúsculas).
+
+#+BEGIN_SRC shell
+grep -ic elx data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 38
+
 ** Número de línea
 Si queremos que salga el número de línea donde aparece la expresión
-buscada, podemos hacerlo con la opción =-n=:
+buscada, podemos hacerlo con la opción ~-n~:
 
 #+BEGIN_SRC sh
 grep -n "Santa Pola" data/155.csv
@@ -1502,21 +1615,39 @@ grep -e "Elx" -e "Alacant" data/155.csv -c
 Aunque no hay operador =AND= en =grep=, podemos hacerlo de varias
 maneras:
 
-- Con la opción =-E= y separando las cadenas con =.*=:
+- Con la opción =-E= y separando las cadenas con =.*=, donde lo que hacemos es utilizar *RegEx*, expresiones regulares.
 - Encadenando =grep=
 
-*** TODO grep AND -E .*
+*** TODO grep y RegExp con operador lógico AND
+
+Con la opción ~-E~ iniciamos una expresión regular. Para simular el operador lógico =AND=, concatenamos con ~.*~
+
 
 #+BEGIN_SRC sh
-grep -E "Elx.* CP" data/155.csv
+grep -E "Elx" .* "CP" data/155.csv
 
 #+END_SRC
 
 #+RESULTS:
 
-Nos dará por la salida estándar cuántos colegios públicos de Elx hay.
 
-*** grep AND -E |
+Nos dará por la salida estándar cuántos colegios públicos de Elx hay. No es casualidad que sea el mismo número que
+centros con amianto en Elx, ya que a los resultados de una búsqueda les sumamos la otra, y . Vamos a mirar
+otro valor. 
+
+#+BEGIN_SRC sh
+grep -E "ELX" .* "Colegio" data/155.csv |wc -l
+
+#+END_SRC
+
+#+RESULTS:
+: 0
+
+*** grep con operador lógico AND con la opción -E pero con expresiones simples entubándolas
+
+De esta manera, primero hacemos una búsqueda y entubamos el resultado a otra y sabemos el número de ellas con
+la opción ~-c~
+
 #+BEGIN_SRC sh
 grep -E "Elx" data/155.csv | grep -Ec "CP"
 
@@ -1555,6 +1686,76 @@ grep -vE "CP|IES" data/155.csv | grep -Ec "Elx|Oriola"
 #+RESULTS:
 : 12
 
+** Más RegExp
+
+*** Búsqueda a principio de línea
+Si quisiéramos saber por cuántas filas comienzan con la expresión =CP=, utilizamos una /ancla/ ~^~ antes de la
+expresión:
+
+#+BEGIN_SRC sh
+grep -c "^CP" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 109
+
+
+109 líneas comienzan con la expresión =CP=.
+
+*** Búsqueda a final de línea
+Y si quisiéramos saber cuántas terminan con una expresión como =Elx),=, utilizaríamos el ancla ~$~.
+
+#+BEGIN_SRC sh
+grep -c "Elx),$" data/155.csv
+#+END_SRC
+
+#+RESULTS:
+: 30
+
+30 líneas terminan con esa expresión.
+
+*** Comodín para caracteres
+
+Si queremos simular uno o dos caracteres, podemos utilizar el comodín ~.~. Por ejemplo, si queremos buscar la
+expresión =Público= y =Publico=:
+
+#+BEGIN_SRC sh
+grep -c "P.blico" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 19
+
+Para comprobar:
+#+BEGIN_SRC sh
+grep -c "Público" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 19
+
+Como son las mismas, significa que siempre aparece con la tilde.
+
+
+
+
+*** Corchetes para dar opciones de caracteres
+
+Lo mismo lo podríamos haber hecho poniendo el grupo de caracteres que podían emplearse en esa posición entre
+corchetes:
+
+#+BEGIN_SRC sh
+grep -c "P[úu]blico" data/155.csv
+
+#+END_SRC
+
+#+RESULTS:
+: 19
+
+Si antes buscaba cualquier carácter, ahora solo lo hace con dos, por lo que la búsqueda es más precisa.
 
 * cut
 Con =cut= extraemos secciones de un archivo, según las opciones:
